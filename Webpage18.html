@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <style>
         .head{
             background-color: black;
@@ -92,6 +94,7 @@
             align-items: center;
             padding: 50px;
             gap: 20px;
+            ;
         }
         .card1,.card2,.card3,.card4,.card5{
              height: 320px;
@@ -99,6 +102,11 @@
              
              border-radius:5%;
              border:1px solid  black;
+             transition: transform 50ms linear 50ms;
+
+        }
+        .card1:hover,.card2:hover,.card3:hover,.card4:hover,.card5:hover{
+            transform:scale(1.1);
 
         }
         .card1 img,.card2 img,.card3 img,.card4 img,.card5 img{
@@ -169,7 +177,7 @@
             border-radius:10%;
             top:19px;
         }
-        .parent{
+        .parent,.eparent{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -190,7 +198,58 @@
              width:100%;
              border-radius:5%;
         }
+        .echild1{
+            height: 150px;
+            width:300px;
+            position :relative;
 
+            border: 1px solid gray;
+            border-radius: 3%;
+        }
+        .echild1 i{
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            top: 50px;
+            font-size: xx-large;
+            
+
+
+        }
+        .echild1 .info1{
+            position: absolute;
+            font-size: 12px;
+            left: 110px;
+        
+        }
+        .info1 h3{color: palevioletred ;}
+        .info1 h3,h4,p{
+            margin:10px;
+            
+        }
+
+        
+        .pform{
+            position:absolute;
+            height:max-content;
+            width:100%;
+            position: relative;
+
+        }
+        .pform .form1{
+            width:50%;
+            position: absolute;
+            
+
+            
+        }
+         .pform .form1{
+            width:50%;
+            position: absolute;
+            left:50%;
+
+            
+        }
 
 
 
@@ -347,6 +406,62 @@
    
 
         </section>
+        <h2 style="text-align: center;"> Education</h2>
+        <section class="eparent"> 
+
+                <section class="echild1">
+                    
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <section class="info1">
+                        <h3>Diploma</h3>
+                        <h4> Computer Engineering</h4>
+                        <p>Goverment polytechnic</p>
+                        <p>bramhapuri</p>
+                        <P>2022-2025</P>
+                    </section>
+                </section>
+                <section class="echild1">
+                    
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <section class="info1">
+                        <h3>bachelor's degree</h3>
+                        <h4> b.sc(Computer Engineering)</h4>
+                        <p>Goverment polytechnic</p>
+                        <p>bramhapuri</p>
+                        <P>2022-2025</P>
+                    </section>
+                </section>
+                <section class="echild1">
+                    
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <section class="info1">
+                        <h3>Master's Degree</h3>
+                        <h4> M.sc(Computer Engineering)</h4>
+                        <p>Goverment polytechnic</p>
+                        <p>bramhapuri</p>
+                        <P>2022-2025</P>
+                    </section>
+                </section>
+                </section>
+        
+
+
+            <h2 style="text-align: center;"> CONTACT ME</h2>
+            
+
+            <section class="pform">
+                <section class="form1">
+                    <input type="text" placeholder="Your Name">
+                    <input type="text" placeholder="Your Email">
+                </section>
+                <section class="form2">
+                    <textarea></textarea>
+                </section>
+                
+        </section>
+
+
+
 
 
     </main>
