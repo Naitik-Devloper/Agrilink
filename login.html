@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .heading{
+            display: flex;
+        }
+        #quick{
+            color: rgb(14, 52, 6);
+        }
+        .bite{
+            color:rgb(28, 131, 27);
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i{
+            font-size: 200%;
+            color: dark rgb(7, 70, 7);
+        }
+        .navbar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(220, 215, 215);
+        }        
+        .navlink a{
+            text-decoration: none;
+            color:  rgb(0, 0, 0);
+            padding: 10px;
+        }
+        .navlink a:hover{
+            color:rgb(13, 255, 1)
+        }
+        .btn{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px; 
+
+        }
+        #reg{
+                border:none;
+                color: rgb(255, 255, 255);
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                background-color: rgb(77, 194, 19);
+                padding: 7px;
+                border-radius: 5px;
+                width: 120px;
+        }
+         .child{
+        height: 400px;
+        width: fit-content;
+        margin-top: 10%;
+        border: 1px solid black;
+        border-radius: 5%;
+        position: relative;
+        
+       }
+       #la{
+        position: absolute;
+        left: 150px;
+        color: rgb(255, 147, 7);
+       }
+       .child label{
+        position: absolute;
+        left: 50px;
+       }
+    
+       .child input{
+        position: absolute;
+        left: 120px;
+       }
+       #h1{
+        text-align: center;
+       }
+       #button1{
+        background-color: blue;
+        color: white;
+        position: absolute;
+        left: 170px;
+       }
+    </style>
+</head>
+<body>
+    
+    <div class="navbar">
+        <div class="logo">
+            <i class="fa-brands fa-pagelines"></i>
+            <div class="heading">
+            <h1 id="quick">Agri</h1>
+            <h1 class="bite">Link</h1></div>
+        </div>
+
+        <div class="navlink">
+            <a href="Agrilink.html">Home</a>
+            <a href="#">Product</a>
+            <a href="#">Farmers</a>
+            <a href="#">Buyers</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </div>
+   
+    <div class="btn">
+        <button id="login">Login</button>
+        <button id="reg">Registration</button>
+    </div>
+    </div>
+    
+    <div>
+        <div>
+            <div>
+                <img src="https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg" height="500px" width="400px">
+            </div>
+            <div class="child">
+            <h1 id="h1">Wellcome Back. Please Log In</h1>
+            <h1 id="h1">To Your Account</h1><br>
+            <label >Email-id</label>
+            <input type="email" placeholder="Enter your email-id"> <br><br>
+            <label>Password</label>
+            <input type="password" placeholder="Enter your password"><br><br><br>
+            <label id="la">Foget Password</label><br><br>
+            <button id="button1">Login</button> 
+            
+        </div>
+        </div>
+    </div>
+</body>
+</html>
