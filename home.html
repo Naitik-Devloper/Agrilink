@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrilink Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .hero{
+            background-image: url(https://www.shutterstock.com/image-photo/white-rice-bowl-bag-wooden-260nw-496424353.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;           
+            width: 100%;
+            height: 450px;
+            background-size: cover;
+            margin-top: 7%;
+            gap: 0.2px;
+        }
+        .hero h1,p{
+          align-items: left;
+          padding-left: 4%;
+        }     
+        .navbar{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(220, 215, 215);
+        }        
+        .navlink a{
+            text-decoration: none;
+            color:  rgb(0, 0, 0);
+            padding: 10px;
+        }
+        .navlink a:hover{
+            color:rgb(13, 255, 1)
+        }
+        .heading{
+            display: flex;
+        }
+        #quick{
+            color: rgb(14, 52, 6);
+        }
+        .bite{
+            color:rgb(28, 131, 27);
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo i{
+            font-size: 200%;
+            color: dark rgb(7, 70, 7);
+        }
+       .btn{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            gap: 20px; 
+       }
+       #login{
+            border:none;
+            color: rgb(8, 80, 42);
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+            padding: 7px;
+       }
+         #reg{
+                border:none;
+                color: rgb(255, 255, 255);
+                font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                background-color: rgb(77, 194, 19);
+                padding: 7px;
+                border-radius: 5px;
+                width: 120px;
+         }
+         .parent{
+            display: flex;
+            border-radius: 7px;
+            justify-content: space-evenly;
+            
+        }
+        .child{           
+            width: 390px;           
+            background-color: rgb(255, 255, 255);
+            margin: 15px;
+            border-radius:7px;
+            border: 1px solid rgb(102, 99, 99);
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;           
+        }
+    
+        .child img{         
+            width: 110px;
+            border-radius: 15px;           
+        }
+        .child h3{
+            text-align: center;
+            font-size: small;                     
+        }
+        .child P{
+            text-align: center;
+            font-size: small;
+        }
+        
+       </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <i class="fa-brands fa-pagelines"></i>
+            <div class="heading">
+            <h1 id="quick">Agri</h1>
+            <h1 class="bite">Link</h1></div>
+        </div>
+
+        <div class="navlink">
+            <a href="Agrilink.html">Home</a>
+            <a href="#">Product</a>
+            <a href="#">Farmers</a>
+            <a href="#">Buyers</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+        </div>
+   
+    <div class="btn">
+        <button id="login">Login</button>
+        <button id="reg">Registration</button>
+    </div>
+    </div>
+
+    <div class="hero">
+       <h1>Connecting Farmers</h1>
+       <h1 style="color: rgb(69, 160, 23);">Direct with Buyers</h1>
+       <p>Agrilink connects farmers directly with buyers</p>
+       <p>for fair prices and trusted deals.</p>       
+    </div><br>
+
+    <DIV class="parent">
+    <div class="child">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8SDsccAhInmZmPzRdH36JB3R7MiIA2QBQCw&s" align="left">
+    <h3 id="head">Direct Farmer-to-Buyer Connection</h3>
+    <p>No middleman, no extra charges.Connects directly.</p>
+     
+    </div>
+
+    <div class="child">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx-wI6sgLz9LSRXK9GkcEbaABA7Lvl2_qPEQ&s" align="left">
+    <h3 id="head">Real-time Crop listings</h3>
+    <P>Farmer's 1st buyers get the latest </P>
+    
+   
+    </div>
+
+    <div class="child">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfwTvkQ5WBWgIibB25OQE-mzZkbwaM_SOGGw&s" align="left">
+    <H3 id="head">Secure Transaction</H3>
+    <p>M.Sc (Computer science)</p>
+    
+    </div>
+
+    <div class="child">
+    <img src="data:image/png;base64,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" align="left">
+    <H3 id="head">Easy Communication</H3>
+    <p>M.Sc (Computer science)</p>
+   
+    </div>
+</DIV>
+</body>
