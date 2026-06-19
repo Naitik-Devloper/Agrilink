@@ -71,8 +71,8 @@
        }
        #la{
         position: absolute;
-        left: 150px;
-        color: rgb(255, 147, 7);
+        left: 200px;
+        color: rgb(45, 250, 4);
        }
        .child label{
         position: absolute;
@@ -91,6 +91,13 @@
         color: white;
         position: absolute;
         left: 170px;
+       }
+       .bot{
+        display: flex;
+        justify-content: center;
+        width: fit-content;
+        height: 50px;
+
        }
     </style>
 </head>
@@ -121,15 +128,21 @@
     
     <div>
         <div>
-            <div>
-                <img src="https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg" height="500px" width="400px">
-            </div>
+            
             <div class="child">
-            <h1 id="h1">Wellcome Back. Please Log In</h1>
-            <h1 id="h1">To Your Account</h1><br>
-            <label >Email-id</label>
+            <h1 id="h1">Wellcome Back!</h1>
+            <h1 id="h1">Login to continue to AgriLink</h1>
+            <div class="bot">
+                <div>
+                    <button>Farmer Login</button>
+                </div>
+                <div>
+                    <button>Buyer Login</button>
+                </div>
+            </div>
+            
             <input type="email" placeholder="Enter your email-id"> <br><br>
-            <label>Password</label>
+            
             <input type="password" placeholder="Enter your password"><br><br><br>
             <label id="la">Foget Password</label><br><br>
             <button id="button1">Login</button> 
