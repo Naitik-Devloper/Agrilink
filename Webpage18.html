@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .head{
+            background-color: black;
+            position: relative;height: 70px;width: 100%;
+            margin: 0%;
+         
+        }
+        .head h3{
+            position: absolute;
+            left:50px;
+            color: rgb(10, 212, 67);
+            top: 10px;
+            
+        }
+        .nav{
+            position: absolute;
+            left: 890px;
+            top: 30px;
+
+            
+        }
+        .head a{
+            padding-left: 35px;
+            text-decoration: none;
+            color: rgb(13, 215, 251);
+        }
+        body{
+            margin: 0%;
+        }
+        .hero{
+            color: aliceblue;
+             background-image: url(abcd.png);
+             padding-top:30px;
+             padding-bottom: 30px;
+             background-repeat: no-repeat;
+             background-size: cover;
+             padding: 20px;
+        }
+        .hero h1{
+            color: rgb(10, 212, 67);
+            
+           
+        }
+        .hero button{
+            padding: 5px;
+        }
+        .hero #b{
+            background-color: rgb(10, 212, 67);
+        }
+        
+        .about{
+            position: relative;
+            
+            
+        }
+        .image{
+            margin-top: 50px;
+            margin-left: 200px;
+            background-image: url(abcd1.png);
+              background-repeat: no-repeat;
+             background-size: cover;
+             height: 300px;
+             width: 350px;
+             border-radius:50%;
+
+        }
+        .info{
+            position: absolute;
+            top: 400px;
+            left: 700px; 
+            
+        }
+        .info h2{
+            text-align: center;
+        }
+        
+         
+      
+       
+        td{padding-left: 15px;
+        padding-bottom: 0%;
+        padding-top: 0%;}
+        .skill{
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            padding: 50px;
+            gap: 20px;
+            ;
+        }
+        .card1,.card2,.card3,.card4,.card5{
+             height: 320px;
+             width: 300px;
+             
+             border-radius:5%;
+             border:1px solid  black;
+             transition: transform 50ms linear 50m,background-color 50ms linear 50ms ;
+
+        }
+        .card1:hover,.card2:hover,.card3:hover,.card4:hover,.card5:hover{
+            transform:scale(1.1);
+            background-color: rgb(108, 218, 218);
+
+        }
+        .card1 img,.card2 img,.card3 img,.card4 img,.card5 img{
+            position:relative;
+            top:20px;
+            left:60px;
+            height: 150px;
+             width: 150px;
+             border-radius:5%;
+            }
+        .card1 .pbar,.card2 .pbar,.card3 .pbar,.card4 .pbar,.card5 .pbar{
+            margin-left:20px;
+            position:relative;
+            height:max-content;
+            width:200px;
+        }
+        .card1 .p{
+            position:absolute;
+            height:10px;
+            width:180px;
+            background-color:palevioletred;
+            border-radius:10%;
+            top:19px;
+        }
+        .card1 .c,.card2 .c,.card3 .c,.card4 .c,.card5 .c{
+            position:absolute;
+            height:8px;
+            width:20px;
+            background-color: rgb(118, 114, 114);
+            left:180px;
+            top:20px;
+            border-radius:10%;
+        }
+        .card1 p,.card2 p,.card3 p,.card4 p,.card5 p{
+            position:absolute;
+            left:210px;
+        
+        }
+        .card2 .p{
+            position:absolute;
+            height:10px;
+            width:180px;
+            background-color:rgb(46, 83, 231);
+            border-radius:10%;
+            top:19px;
+        }
+        .card3 .p{
+            position:absolute;
+            height:10px;
+            width:180px;
+            background-color:rgb(24, 113, 34);
+            border-radius:10%;
+            top:19px;
+        }
+         .card4 .p{
+            position:absolute;
+            height:10px;
+            width:180px;
+            background-color:rgb(46, 83, 231);
+            border-radius:10%;
+            top:19px;
+        }
+         .card5 .p{
+            position:absolute;
+            height:10px;
+            width:180px;
+            background-color:purple;
+            border-radius:10%;
+            top:19px;
+        }
+        .parent,.eparent{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .child1,.child2,.child3{
+             height: 300px;
+             width: 400px;
+             border-radius:5%;
+             border:1px solid  black;
+             text-align: center;
+             
+        }
+        .child1 img,.child2 img,.child3 img{
+            position:relative;
+            
+            height: 150px;
+             width:100%;
+             border-radius:5%;
+        }
+        .echild1{
+            height: 150px;
+            width:300px;
+            position :relative;
+
+            border: 1px solid gray;
+            border-radius: 3%;
+        }
+        .echild1 i{
+            position: absolute;
+            width: 100px;
+            height: 100%;
+            top: 50px;
+            font-size: xx-large;
+            
+
+
+        }
+        .echild1 .info1{
+            position: absolute;
+            font-size: 12px;
+            left: 110px;
+        
+        }
+        .info1 h3{color: palevioletred ;}
+        .info1 h3,h4,p{
+            margin:10px;
+            
+        }
+
+        
+        .pform{
+            position:absolute;
+            height:max-content;
+            width:100%;
+            position: relative;
+
+        }
+        .pform .form1{
+            width:50%;
+            position: absolute;
+            
+
+            
+        }
+         .pform .form1{
+            width:50%;
+            position: absolute;
+            left:50%;
+
+            
+        }
+
+
+
+
+       
+
+    </style>
+</head>
+<body>
+    <header class="head">
+        <h3>Naitik</h3>
+        <section class="nav">
+        <a href="#">Home</a>
+        <a href="#">About me</a>
+        <a href="#">Skills</a>
+        <a href="#">Education</a>
+        <a href="#">Contact</a>
+        
+        </section>
+    </header>
+    <main>
+        <section class="hero">
+            <h2> Hi,I'M</h2>
+            <h1>  NAITIK LOHAKARE</h1>
+            <h3> FRONTEND DEVELOPER</h3>
+            <p>I build beautiful,responsive and user friendly</p>
+            <p>Website using HTML,CSS and JAVASCRIPT</p>
+            <section>
+            <button id="b"> Download CV</button>
+            <button>Hire me</button>
+            </section>
+        </section>
+        
+        <section class="about">
+            <section class="image" ></section></section>
+            <section class="info">
+        <h2> About Me</h2>
+        <h3> Hello,i'm Naitik Lohakare</h3>
+        <p>"I am a passionate Frontend Developer who loves to create </p><p> and functional websites. I enjoy turning ideas into reality through code."</p>
+          
+        <p> <b>Name:</b>     Naitik lohakare</p>
+        <p> <b>Email:</b>     naitiklohakare2@gmail.com</p>
+        <p> <b>from:</b>     Bhadrawati,Maharashtra</p>
+        <p> <b>Freelance:</b>     Avaliable</p>
+        
+            
+    </section>
+    <h2 style="text-align: center;"> My Skills</h2> 
+    <section class="skill">
+        <section class="card1">
+            <img src="html_symbol.png">
+            <h2 style="text-align: center;"> HTML</h2>
+             <section class="pbar">
+            <section class="c"></section>
+            <section class="p"></section>
+            <p>90%</p>
+
+             </section>
+
+
+        </section>
+        <section class="card2">
+              
+            <img src="css_symbol.png">
+            <h2 style="text-align: center;"> CSS</h2>
+             <section class="pbar">
+            <section class="c"></section>
+            <section class="p"></section>
+            <p>90%</p>
+
+             </section>
+
+
+        </section>
+        
+          <section class="card3">
+              
+            <img src="js_symbol.png">
+            <h2 style="text-align: center;"> JavaScript</h2>
+             <section class="pbar">
+            <section class="c"></section>
+            <section class="p"></section>
+            <p>90%</p>
+
+             </section>
+
+
+        </section>
+        
+         <section class="card4">
+              
+            <img src="bs_symbol.png">
+            <h2 style="text-align: center;">Bootstrap</h2>
+             <section class="pbar">
+            <section class="c"></section>
+            <section class="p"></section>
+            <p>90%</p>
+
+             </section>
+
+
+        </section>
+        
+        <section class="card5">
+              
+            <img src="java_symbol.png">
+            <h2 style="text-align: center;">Java</h2>
+             <section class="pbar">
+            <section class="c"></section>
+            <section class="p"></section>
+            <p>90%</p>
+
+             </section>
+
+
+        </section>
+    </section>
+  
+  
+  
+  
+  
+  <h2 style="text-align: center;">my project</h2> 
+    
+         <section class="parent">
+             <section class="child1">
+        <img src="WhatsApp Image 2026-06-18 at 9.40.43 AM.jpeg" alt="card image" >
+        <h2> Portfolio  Website</h2>
+        <p> A personal portfolio website <br>using HTML &css</p>
+        <section class="button">
+        
+        <button > View more</button>
+        </section>
+        </section>
+        <section class="child2">
+        <img src="WhatsApp Image 2026-06-18 at 9.40.42 AM.jpeg" alt="card image" >
+        <h2> E-commerce  Website</h2>
+        <p> A responsive e-commerce website <br>design</p>
+        <section class="button">
+        
+        <button > View more</button>
+        </section>
+        </section>
+
+        <section class="child3">
+        <img src="das.png" alt="card image" >
+        <h2> Dashboard Website</h2>
+        <p> A morden dashboard<br>ui design</p>
+        <section class="button">
+        
+        <button > View more</button>
+        </section>
+        </section>
+   
+
+        </section>
+        <h2 style="text-align: center;"> Education</h2>
+        <section class="eparent"> 
+
+                <section class="echild1">
+                    
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <section class="info1">
+                        <h3>Diploma</h3>
+                        <h4> Computer Engineering</h4>
+                        <p>Goverment polytechnic</p>
+                        <p>bramhapuri</p>
+                        <P>2022-2025</P>
+                    </section>
+                </section>
+                <section class="echild1">
+                    
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <section class="info1">
+                        <h3>bachelor's degree</h3>
+                        <h4> b.sc(Computer Engineering)</h4>
+                        <p>Goverment polytechnic</p>
+                        <p>bramhapuri</p>
+                        <P>2022-2025</P>
+                    </section>
+                </section>
+                <section class="echild1">
+                    
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <section class="info1">
+                        <h3>Master's Degree</h3>
+                        <h4> M.sc(Computer Engineering)</h4>
+                        <p>Goverment polytechnic</p>
+                        <p>bramhapuri</p>
+                        <P>2022-2025</P>
+                    </section>
+                </section>
+                </section>
+        
+
+
+            <h2 style="text-align: center;"> CONTACT ME</h2>
+            
+
+            <section class="pform">
+                <section class="form1">
+                    <input type="text" placeholder="Your Name">
+                    <input type="text" placeholder="Your Email">
+                </section>
+                <section class="form2">
+                    <textarea></textarea>
+                </section>
+                
+        </section>
+
+
+
+
+
+    </main>
+    
+</body>
+</html>
