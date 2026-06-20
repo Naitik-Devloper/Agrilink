@@ -3,125 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="External_CSS.css">
+    <title>AgriLink - Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="External_CSS.css">
     <style>
-        body{ 
-        background-image: url(login_image.png);
-        background-size: cover;
-        background-repeat: no-repeat;
+        * {
+            box-sizing: border-box;
         }
-        .heading{
+
+        body { 
+            background-image: url(login_image.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-top: 5%;
             display: flex;
+            flex-direction: column;
         }
-       
-      
-         .child{
-        height: 400px;
-        width: 400px;
-        margin-top: 8%;
-        position:relative;
-        left:800px;
-        top: 40px;
+
+        .main-wrapper {
+            display: flex;
+            justify-content:center; 
+            align-items: center;     
+            padding: 20px;
+            margin-left: 50%;
+        }
+
+        .child {
+            
+            width: 100%;
+            max-width: 400px; 
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 30px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+         
+        #h1 {
+            margin: 0 0 10px 0;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .welcome-text {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 20px;
+        }
+        #pg {
+            color: green;
+            font-weight: bold;
+            margin: 0;
+        }
+        #p {
+            margin: 0;
+        }
+
         
-       }
-       #p{
-        position:absolute;
-        left:100px;
-        margin-top:0%;
-       }
-       #pg{
-        position: absolute;
-        color:green;
-        left:235px;
-        top:22px;
-       }
-       #la{
-        position: absolute;
-        left: 60px;
-        color: rgb(66, 179, 17);
-       }
-       .child label{
-        position: absolute;
-        left: 50px;
-       }
-    
-       .input{
-        position: absolute;
-        left: 120px;
-        top: 160px;
+        .bot {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+        .bot div {
+            flex: 1;
+        }
 
-       }
-       
-       #h1{
-        margin: 0%;
-        text-align: center;
-       }
-       
-        .child .bot{
-        position: absolute;
-        left: 100px; 
-        margin-top:50px;
-        display: flex;
-        justify-content: center;
-        width: fit-content;
-        height: 50px;
-        gap:10px;
+        .bot button {
+            width: 100%;
+            background-color: gainsboro;
+            border: 0px;
+            border-radius: 5px;
+            padding: 12px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .bot button:hover {
+            background-color: rgb(75, 220, 75);
+            color: white;
+        }
+
         
-
-       }
-       .bot button{
-        background-color: gainsboro;
-        border: 0px;
-        border-radius: 5%;
-        padding: 10px;
-       }
-       .bot button:hover{
-        background-color: rgb(75, 220, 75);
-       }
-       #or{
-        position: absolute;
-        top: 138px;
-        left: 80px;
+        .input-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .input-form input {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
         
-       }
-       #but1{
-        position: absolute;
-        top: 105px;
-        border: 1px solid black;
-        color: rgb(10, 1, 1);
-        height: 40px;
-        width: 280px;
-        margin-left: -50px;
+        #la {
+            color: rgb(66, 179, 17);
+            text-align:end;
+            font-size: 14px;
+            text-decoration: none;
+        }
 
-       }
-       #but2{
-         position: absolute;
-        top: 180px;
-        border: 1px solid black;
-        color: rgb(10, 1, 1);
-        height: 40px;
-        width: 280px;
-        margin-left: -50px;
+        
+        .submit-btn {
+            width: 100%;
+            height: 45px;
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight:bold;
+            transition: 0.2s;
+        }
+        #but1 {
+            background-color: #333;
+            color: white;
+        }
+        #but1:hover {
+            background-color:rgb(75, 220, 75);
+        }
+        #but2 {
+            background-color: transparent;
+            color: black;
+        }
+        #but2:hover {
+            background-color:rgb(75, 220, 75);
+            color: white;
+        }
 
-       }
-       .help{
-        display: flex;
-        justify-content:start;
-        align-items: center;
-        width: 230px;
-        position: absolute;
-        gap: 20px;
-        top: 230px;
-        left: -10px;
-        background-color: aliceblue;
-       }
-       i{
-        font-size: 30px;
-        color: green;
-       }
-       
+        #or {
+            text-align: center;
+            margin: 5px 0;
+            font-weight: bold;
+            color: #666;
+        }
+
+        
+        .help {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background-color: aliceblue;
+            border-radius: 5px;
+            width: 100%;
+            margin-top: 15px;
+        }
+        .help i {
+            font-size: 24px;
+            color: green;
+        }
+        .help p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .parent{
+            display:flex;
+            justify-content: center;
+            text-align: right;
+            position: relative;
+        }
+        .p1{
+            font-size: 550%;
+            position: absolute;
+            color: rgb(0, 80, 0);
+            top: 60px;
+            left: 100px;
+        }
+        .p2{
+            font-size: 40px;
+            position: absolute;
+            color: rgb(1, 7, 1);
+            left: 14%;
+            top: 10%;
+        }
+        h3{
+            position: absolute;
+            top: 32%;
+            left: 16%;
+            color: rgb(1, 3, 0);
+        }
+        #pa{
+            position: absolute;
+            top: 80%;
+        }
     </style>
 </head>
 <body>
@@ -130,8 +198,9 @@
         <div class="logo">
             <i class="fa-brands fa-pagelines"></i>
             <div class="heading">
-            <h1 id="quick">Agri</h1>
-            <h1 class="bite">Link</h1></div>
+                <h1 id="quick">Agri</h1>
+                <h1 class="bite">Link</h1>
+            </div>
         </div>
 
         <div class="navlink">
@@ -143,48 +212,61 @@
             <a href="#">Contact Us</a>
         </div>
    
-    <div class="btn">
-        <button id="login">Login</button>
-        <button id="reg">Registration</button>
+        <div class="btn">
+            <button id="login">Login</button>
+            <button id="reg">Registration</button>
+        </div>
     </div>
-    </div>
-    
+
     <div>
-        
-            
-            <div class="child">
-            <h1 id="h1">Wellcome Back!</h1>
-            <p id="p">Login to continue to </p><p id="pg">AgriLink</p>
-            <div class="bot">
-                <div>
-                    <button>Farmer Login</button>
-                </div>
-                <div>
-                    <button>Buyer Login</button>
-                </div>
+        <div class="parent">
+            <div class="p1">
+                <i class="fa-brands fa-pagelines"></i>
             </div>
-            <div class="input">
-            <div>
-            <input type="email" placeholder="Enter your email-id"> <br><br>
-            
-            <input type="password" placeholder="Enter your password"><br><br>
-            <label id="la">Foget Password</label><br><br>
-            <button id="but1">Login</button>
-            <p id="or">OR</p>  
-            <button id="but2">Create new Account</button>
-            <div class="help">
-                <div class="he">
-                    <i class="fa-solid fa-phone"></i>
-                </div>
-                <div>
-                    <P>Need healp?<br>
-                    call us at:9022726455</P>
-                </div>
-            </div>
-                      
+            <div class="p2">
+                <h1>AgriLink</h1>
             </div>
         </div>
-        
+        <h3>Growing Together,Trading Better</h3>
+        <P id="pa">"Briding the gap between<br>
+        framers and buyers."</P>
     </div>
+
+
+    
+    <div class="main-wrapper">
+        <div class="child">
+            <h1 id="h1">Welcome Back!</h1>
+            <div class="welcome-text">
+                <p id="p">Login to continue to </p>
+                <p id="pg">AgriLink</p>
+            </div>
+
+            <div class="bot">
+                <div><button>Farmer Login</button></div>
+                <div><button>Buyer Login</button></div>
+            </div>
+
+            <div class="input-form">
+                <input type="email" placeholder="Enter your email-id">
+                <input type="password" placeholder="Enter your password">
+                
+                <a id="la" href="#">Forgot Password?</a>
+                
+                <button id="but1" class="submit-btn">Login</button>
+                <p id="or">OR</p>  
+                <button id="but2" class="submit-btn">Create new Account</button>
+                
+                <div class="help">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <p>Need help?<br><b>Call us at: 9022726455</b></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
 </body>
 </html>
