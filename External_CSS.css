@@ -8,6 +8,7 @@
             align-items: center;
             background-color: rgb(255, 255, 255);
             border: 1px solid rgb(220, 215, 215);
+            z-index: 999;
         }        
         .navlink a{
             text-decoration: none;
