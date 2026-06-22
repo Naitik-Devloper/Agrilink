@@ -4,217 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agrilink Website</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="stylesheet" href="External_CSS.css">
-   <style>
-    body{
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="External_CSS.css">
+    
+    <style>
+        /* Base Styling */
+        body {
+            background-color: #ffffff;
+            color: #333333;
+        }
 
-        margin: 0%;
-        
-    }
-        .hero{
+        /* Custom Responsive Hero Layout */
+        .hero {
             width: 100%;
-            height: 730px;
-            background-image:url(Ahero.png) ;
+            min-height: 80vh;
+            background-image: url('Ahero.png');
             background-size: cover;
             background-repeat: no-repeat;
-            position: relative;
-            top: 20%;
+            background-position: center;
         }
-        #a{
+        .hero-title-green {
+            color: #2c6e49;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .hero-title-white {
+            color: #ffffff;
+            font-weight: 700;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.5px;
+        }
 
-            position: absolute;
-            color: rgb(63, 141, 75);
-            left:75% ;
-            top:15%;
-            font-size: xx-large;
-            
-
-        }
-         #b{
-
-            position: absolute;
-            color: rgb(255, 255, 255);
-            left:65% ;
-            top:20%;
-            font-size: xx-large;
-        }
-        #c{
-            margin-left: 45%;
-             width:max-content;
-            height: max-content;
-            margin-bottom: 10%;
-            
-        }
-        .parent{
-             display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10%;
-        }
-        .vision{
-            position: relative;
-            
-    
-        
-            width: 500px;
-            height: 400px; 
+        /* Custom Vision/Mission Cards */
+        .vision-card {
             border: 2px solid rgb(17, 230, 67);
-            border-radius: 5%;
-            background-color:rgb(255, 248, 240);
-           transition: transform 0.5s linear;
+            border-radius: 15px;
+            background-color: rgb(255, 248, 240);
+            transition: transform 0.3s ease-in-out, border-color 0.3s ease-in-out;
+            position: relative;
+            padding-top: 3rem !important;
         }
-        .vision:hover{
-
+        .vision-card:hover {
             border: 2px solid red;
-            transform: scale(1.1);
+            transform: scale(1.03);
         }
-       
-        #d{
+        .vision-badge {
             position: absolute;
-            padding: 5%;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: azure;
             color: rgb(12, 225, 12);
-            top:-17%;
-            left: 33%;
-            border-radius: 30%;
             border: 2px solid rgb(233, 29, 29);
-        }
-        #e{
-            font-size: x-large;
-            text-align: center;
-            padding: 5%;
-            padding-top: 20%;
-        }
-        .feature{
-            position: relative;
-        }
-        .card1{ 
-            position: absolute;
-            width: 200px;
-            height: 100px;
-            top:75%;
-            border-radius: 5%;
-            left:25%;
-            
-            
+            border-radius: 20px;
+            padding: 8px 25px;
+            font-size: 1.25rem;
+            font-weight: bold;
         }
 
-        .box1{ position:absolute;
-            left:15%;
-            width: 400px;
-            height: 250px;
+        /* Feature Boxes Custom Styles */
+        .feature-box {
             border: 2px solid rgb(5, 169, 46);
-            border-radius: 5%;
-            
-            
+            border-radius: 15px;
+            background-color: #ffffff;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .box1 h2,.box1 p,.box2 h2,.box2 p{
-            text-align: center;
-            margin: 2%;
+        .feature-box:hover {
+            border-color: #4cd113;
+            box-shadow: 0 .5rem 1rem rgba(0,0,0,0.15) !important;
         }
-        .card1 img{
-            position: absolute;
-            border: 2px solid rgb(196, 21, 155);
-            width:100%;
-            height:100%;
+        .feature-img-wrapper {
+            width: 100px;
+            height: 100px;
+            margin: 15px auto 0 auto;
+        }
+        .feature-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             border-radius: 50%;
-            
-
+            border: 2px solid rgb(196, 21, 155);
         }
-          .box2{ position:absolute;
-            left:58%;
-            width: 400px;
-            height: 250px;
-            border: 2px solid rgb(5, 169, 46);
-            border-radius: 5%;
-            
-            
-            
-        }
-        .card2 {
-               position: absolute;
-            width: 200px;
-            height: 100px;
-            top:25%;
-            border-radius: 5%;
-            left:25%;
-        }
-   </style>
-       
+    </style>
 </head>
 <body>
-    <div class="navbar">
-        <div class="logo">
-            <i class="fa-brands fa-pagelines"></i>
-            <div class="heading">
-            <h1 id="quick">Agri</h1>
-            <h1 class="bite">Link</h1></div>
-        </div>
 
-        <div class="navlink">
-            <a href="Agrilink.html">Home</a>
-            <a href="#">Product</a>
-            <a href="#">Farmers</a>
-            <a href="#">Buyers</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-        </div>
-   
-    <div class="btn">
-        <button id="login">Login</button>
-        <button id="reg">Registration</button>
-    </div>
-    </div>
-    <div class="hero">
-        <h1 id="a"> AGRILINK:</h1>
-        <h1 id="b">CULTIVATING CONNECTIONS</h1>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 border-bottom border-light">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <i class="fa-brands fa-pagelines text-dark fs-2"></i>
+                <span class="fs-3 fw-bold" style="color: #1c4b27;">Agri<span style="color: #1c4b27;">Link</span></span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    </div>
-    <br><br>
-    <h2 id="c"><u>_ABOUT US_</u></h2>
-    <div class="parent">
-    <div class="vision">
-        
-        <h1 id="d">VISION</h1>
-        <p id="e">Our vision is to eliminate traditional supply chain exploitation, guaranteeing fair financial returns at the grassroots level for local farmers while delivering unparalleled volume predictability and procurement efficiency to corporate retail chains.</p>
-
-
-    </div>
-    <div class="vision">
-        
-        <h1 id="d">MISSION</h1>
-        <p id="e">To eliminate multi-tier supply chain inefficiencies by pooling local smallholder harvests into stable corporate contracts—empowering farmers with direct access to maximum financial returns while providing industrial buyers with a reliable, direct pipeline to consistent wholesale volumes.</p>
-
-
-    </div>
-    </div>
-    <br>
-    <br>
-    <h2 id="c"><u>_FEATURES_</u></h2>
-    <div class="features">
-         
-        <div class="box1">
-            <h2>🌾 Cooperative Yield Aggregation</h2>
-            <p>Empowers smallholder farmers to pool their small harvests together into a shared wholesale contract bucket. This enables local growers to collectively meet the massive 5,000+ kg bulk payloads required by industrial buyers, opening doors to highly lucrative corporate contracts.</p>
-            <div class="card1">
-             <img src="img1.png" alt="img1">
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="Agrilink.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#">Product</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#">Farmers</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#">Buyers</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link text-dark fw-medium" href="#">Contact Us</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-4">
+                    <a href="#" class="text-decoration-none text-dark fw-semibold small" id="login">Login</a>
+                    <button class="btn px-4 py-2 text-white fw-medium border-0" style="background-color: #4cd113; border-radius: 6px;" id="reg">Registration</button>
+                </div>
             </div>
         </div>
-         <div class="box2">
-            <h2>🤝 Direct Marketplace Bidding</h2>
-            <p>Bypasses traditional multi-tier middleman cartels completely, ensuring farmers secure the highest possible fair margins for their crops. Simultaneously, it provides commercial networks with a direct, transparent channel to place live bids with absolute price predictability.</p>
-            <div class="card1">
-             <img src="img2.png" alt="img1">
+    </nav>
+
+    <div class="hero d-flex align-items-start pt-5">
+        <div class="container py-4 mt-2">
+            <div class="row justify-content-end px-3 text-center text-md-end">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <h1 class="hero-title-green display-5 m-0 mb-1">AGRILINK:</h1>
+                    <h2 class="hero-title-white h1 m-0">CULTIVATING CONNECTIONS</h2>
+                </div>
             </div>
         </div>
-        
-
     </div>
 
-    
-    
-    
+    <div class="container my-5 py-4">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold position-relative d-inline-block pb-2 text-uppercase">About Us</h2>
+        </div>
+        
+        <div class="row g-5 justify-content-center pt-3">
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="vision-card p-4 text-center h-100 shadow-sm">
+                    <div class="vision-badge">VISION</div>
+                    <p class="fs-5 text-muted leading-relaxed">Our vision is to eliminate traditional supply chain exploitation, guaranteeing fair financial returns at the grassroots level for local farmers while delivering unparalleled volume predictability and procurement efficiency to corporate retail chains.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="vision-card p-4 text-center h-100 shadow-sm">
+                    <div class="vision-badge">MISSION</div>
+                    <p class="fs-5 text-muted leading-relaxed">To eliminate multi-tier supply chain inefficiencies by pooling local smallholder harvests into stable corporate contracts—empowering farmers with direct access to maximum financial returns while providing industrial buyers with a reliable, direct pipeline to consistent wholesale volumes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <div class="container my-5 py-4">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold position-relative d-inline-block pb-2 text-uppercase">Features</h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-6">
+                <div class="feature-box p-4 d-flex flex-column justify-content-between h-100 shadow-sm">
+                    <div>
+                        <h3 class="h4 text-success fw-semibold mb-3 text-center">🌾 Cooperative Yield Aggregation</h3>
+                        <p class="text-muted text-center m-0">Empowers smallholder farmers to pool their small harvests together into a shared wholesale contract bucket. This enables local growers to collectively meet the massive 5,000+ kg bulk payloads required by industrial buyers, opening doors to highly lucrative corporate contracts.</p>
+                    </div>
+                    <div class="feature-img-wrapper">
+                        <img src="img1.png" alt="Cooperative Yield Aggregation Graphic">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="feature-box p-4 d-flex flex-column justify-content-between h-100 shadow-sm">
+                    <div>
+                        <h3 class="h4 text-success fw-semibold mb-3 text-center">🤝 Direct Marketplace Bidding</h3>
+                        <p class="text-muted text-center m-0">Bypasses traditional multi-tier middleman cartels completely, ensuring farmers secure the highest possible fair margins for their crops. Simultaneously, it provides commercial networks with a direct, transparent channel to place live bids with absolute price predictability.</p>
+                    </div>
+                    <div class="feature-img-wrapper">
+                        <img src="img2.png" alt="Direct Marketplace Bidding Graphic">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="feature-box p-4 d-flex flex-column justify-content-between h-100 shadow-sm">
+                    <div>
+                        <h3 class="h4 text-success fw-semibold mb-3 text-center">📍 Smart Regional Matching</h3>
+                        <p class="text-muted text-center m-0">Groups neighboring growers instantly through a low-bandwidth administrative lookup (Taluka $\rightarrow$ District $\rightarrow$ State) rather than relying on unstable GPS signals. Farmers save heavily on logistics, while corporate buyers can isolate and source from the closest available supply clusters with maximum transport efficiency.</p>
+                    </div>
+                    <div class="feature-img-wrapper">
+                        <img src="img3.png" alt="Quality Verification Graphic">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="feature-box p-4 d-flex flex-column justify-content-between h-100 shadow-sm">
+                    <div>
+                        <h3 class="h4 text-success fw-semibold mb-3 text-center">🔒 Automatic Contract Settlement</h3>
+                        <p class="text-muted text-center m-0">Secures the transaction by shifting the contract status to a locked state the exact millisecond cumulative crop weights match 100% of the buyer’s bulk order target. This guarantees automated, secure payout splits for the farming cluster while ensuring flawless volume predictability for the industry.</p>
+                    </div>
+                    <div class="feature-img-wrapper">
+                        <img src="img4.png" alt="Millisecond Execution Graphic">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
