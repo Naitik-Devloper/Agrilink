@@ -21,6 +21,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            
         }
 
         /* --- Navbar Custom Styles --- */
@@ -56,20 +57,20 @@
         .main-content-area {
             flex: 1;
             display: flex;
-            align-items: center;
+            align-items: stretch; /* Stretch columns to take full height for correct alignment */
         }
 
         /* Branding text (Left Side) */
         .brand-text-wrapper {
-            color: #111;
-            padding: 20px;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+            color: white;
+            padding: 20px ;
+            height: 100%;
         }
         .brand-header-inline {
             display: flex;
             align-items: center;
             gap: 15px;
-            color: rgb(0, 80, 0);
+            color: #2c6e49;
         }
         .brand-header-inline i {
             font-size: 4rem;
@@ -82,14 +83,15 @@
         .brand-text-wrapper h3 {
             font-size: 1.8rem;
             margin-top: 10px;
-            color: #111;
+            color: rgb(243, 111, 4);
         }
         .brand-text-wrapper p {
             font-size: 1.2rem;
             font-style: italic;
             margin-top: 15px;
+            margin-left: 40px;
             font-family: sans-serif;
-            color: #333;
+            color: rgb(255, 253, 253);
         }
 
         /* Login Card Wrapper (Right Side) */
@@ -212,13 +214,11 @@
         @media (max-width: 767.98px) {
             body {
                 background-position: left center;
+                padding-top: 70px;
             }
             .brand-text-wrapper {
                 text-align: center;
-                margin-bottom: 20px;
-                background-color: rgba(255, 255, 255, 0.7);
-                border-radius: 10px;
-                padding: 15px;
+                height: auto;
             }
             .brand-header-inline {
                 justify-content: center;
@@ -272,18 +272,23 @@
     <div class="container main-content-area py-4">
         <div class="row w-100 align-items-center justify-content-between g-4 m-0">
             
-            <div class="col-12 col-md-6 col-lg-5">
-                <div class="brand-text-wrapper">
-                    <div class="brand-header-inline">
-                        <i class="fa-brands fa-pagelines"></i>
-                        <h1>AgriLink</h1>
+            <div class="col-12 col-md-6 col-lg-5 align-self-stretch pt-3">
+                <div class="brand-text-wrapper d-flex flex-column">
+                    <div>
+                        <div class="brand-header-inline">
+                            <i class="fa-brands fa-pagelines"></i>
+                            <h1>AgriLink</h1>
+                        </div>
+                        <h3>Growing Together, Trading Better</h3>
                     </div>
-                    <h3>Growing Together, Trading Better</h3>
-                    <p>" Bridging the gap between<br>farmers and buyers. "</p>
+                    
+                    <div class="mt-auto pt-5">
+                        <p>" Bridging the gap between<br>farmers and buyers. "</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-5 d-flex justify-content-center">
+            <div class="col-12 col-md-6 col-lg-5 d-flex justify-content-center align-self-center">
                 <div class="child">
                     <h1 id="h1">Welcome Back!</h1>
                     <div class="welcome-text">
