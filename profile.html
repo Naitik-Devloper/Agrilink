@@ -126,12 +126,13 @@
             transition: 0.2s;
         }
         #but2 {
-            background-color: transparent;
+            background-color: rgb(75, 220, 75);;
             color: black;
+            border-color:white;
         }
         #but2:hover {
-            background-color: rgb(75, 220, 75);
-            color: white;
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
             border-color: rgb(75, 220, 75);
         }
 
@@ -231,43 +232,45 @@
                         <span class="input-group-text text-success">
                         <i class="fa-solid fa-user"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Enter name" required id="name">
+                        <input type="text" class="form-control" placeholder="Enter Name" required id="name">
                         </div>
-       
+                           
                         <div class="input-group mb-3"> 
                         <span class="input-group-text text-success">
                         <i class="fa-solid fa-phone"></i>
                         </span>
-                        <input type="number" class="form-control" placeholder="Enter mobile number" required id="number">
+                        <input type="number" class="form-control" placeholder="Enter Mobile Number" required id="number">
                         </div>
                        
                         <div class="input-group mb-3">
                         <span class="input-group-text text-success">
                         <i class="fa-solid fa-envelope"></i>
                         </span>
-                        <input type="email" class="form-control" placeholder="Enter your email-id" required id="email">
+                        <input type="email" class="form-control" placeholder="Enter Your Email-Id" required id="email">
                         </div>
                                         
                         <div class="input-group mb-3">
                         <span class="input-group-text text-success">
                         <i class="fa-solid fa-location-dot"></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Enter your address" required id="address">
+                        <input type="text" class="form-control" placeholder="Enter Your Address" required id="address">
                         </div>
                         
-                        <div class="input-group mb-3">
-                        <span class="input-group-text text-success">
-                        <i class="fa-solid fa-building"></i>
-                        </span>
-                        <input type="text" class="form-control" placeholder="Enter city" required id="city">
+                        <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <input type="text" class="form-control" placeholder="Enter Taluka" required id="taluka">                                                                                            
                         </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="text" class="form-control" placeholder="Enter District" id="district">
+                        </div>
+                     </div>
                    
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" placeholder="Enter state" required id="state">                                                                                            
+                            <input type="text" class="form-control" placeholder="Enter State" required id="state">                                                                                            
                         </div>
                         <div class="col-md-6 mb-3">
-                            <input type="text" class="form-control" placeholder="Pincode" id="pincode">
+                            <input type="text" class="form-control" placeholder="Enter Pincode" id="pincode">
                         </div>
                      </div>
 
@@ -287,10 +290,11 @@
             var mobile=document.getElementById("number").value;
             var email=document.getElementById("email").value;
             var address=document.getElementById("address").value;
-            var city=document.getElementById("city").value;
+            var taluka=document.getElementById("taluka").value;
+            var district=document.getElementById("district").value; 
             var state=document.getElementById("state").value;
             var pincode=document.getElementById("pincode").value;
-            if(name==="" || mobile==="" || email==="" || address==="" || city==="" || state==="" || pincode==="" ){
+            if(name==="" || mobile==="" || email==="" || address==="" || taluka==="" || state==="" || pincode==="" ){
                 alert("All filds are required");
                 return false;
             }
