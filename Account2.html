@@ -1,61 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account - AgriLink</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="External_CSS.css">
+     <link rel="stylesheet" href="External_CSS.css">
     <style>
         * {
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        body {
+        body { 
             background-image: url(Account_img.jpeg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            /* Stacks navbar vertically on top of main content */
+            flex-direction: column; /* Stacks navbar vertically on top of main content */
         }
 
-
+        
         /* --- Navbar Custom Styles --- */
         .navbar-custom {
             background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             padding: 10px 5%;
         }
-
         .logo-container {
             display: flex;
             align-items: center;
             gap: 8px;
             color: green;
         }
-
         .logo-container h1 {
             font-size: 24px;
             margin: 0;
             font-weight: bold;
         }
-
         .logo-container .bite {
             color: #333;
         }
-
         .navlink-custom .nav-link {
             margin: 0 10px;
             color: #333 !important;
             font-weight: 500;
         }
-
         .navlink-custom .nav-link:hover {
             color: green !important;
         }
@@ -63,25 +56,23 @@
         /* --- Split Layout Container --- */
         .page-container {
             display: flex;
-            flex: 1;
-            /* Automatically takes up all remaining vertical viewport space */
-            height: calc(100vh - 73px);
-            /* Dynamic adjustment based on standard navbar height */
+            flex: 1; /* Automatically takes up all remaining vertical viewport space */
+            height: calc(100vh - 73px); /* Dynamic adjustment based on standard navbar height */
             overflow: hidden;
         }
 
         /* --- Left Side: Branding Side Panel --- */
-        .brand-side {}
+        .brand-side {
+           
+        }
 
         .brand-main-text h1 {
             font-size: 3rem;
             font-weight: 800;
             line-height: 1.2;
-            color: #ffffff;
-            /* Adjusted to white for clear image overlay contrast */
+            color: #ffffff; /* Adjusted to white for clear image overlay contrast */
             margin-bottom: 20px;
         }
-
         .brand-main-text p {
             font-size: 1.1rem;
             line-height: 1.5;
@@ -98,20 +89,17 @@
             justify-content: space-around;
             backdrop-filter: blur(5px);
         }
-
         .feature-item {
             text-align: center;
             font-size: 0.8rem;
             color: #e0e0e0;
         }
-
         .feature-item i {
             font-size: 1.5rem;
             color: #4cd113;
             margin-bottom: 8px;
             display: block;
         }
-
         .feature-item span {
             display: block;
             font-weight: 600;
@@ -154,7 +142,6 @@
             text-align: center;
             margin-bottom: 5px;
         }
-
         .form-wrapper .subtitle {
             text-align: center;
             color: #666;
@@ -166,7 +153,6 @@
         .form-group {
             margin-bottom: 20px;
         }
-
         .form-group label {
             font-weight: 600;
             font-size: 0.9rem;
@@ -174,11 +160,9 @@
             margin-bottom: 8px;
             display: block;
         }
-
         .input-icon-container {
             position: relative;
         }
-
         .input-icon-container i.field-icon {
             position: absolute;
             left: 15px;
@@ -187,7 +171,6 @@
             color: #888;
             font-size: 1rem;
         }
-
         .input-icon-container i.toggle-password {
             position: absolute;
             right: 15px;
@@ -196,9 +179,7 @@
             color: #888;
             cursor: pointer;
         }
-
-        .input-icon-container input,
-        .input-icon-container select {
+        .input-icon-container input, .input-icon-container select {
             width: 100%;
             padding: 12px 15px 12px 45px;
             border: 1px solid #dcdcdc;
@@ -207,9 +188,7 @@
             outline: none;
             transition: all 0.2s ease;
         }
-
-        .input-icon-container input:focus,
-        .input-icon-container select:focus {
+        .input-icon-container input:focus, .input-icon-container select:focus {
             border-color: #2e7d32;
             box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
         }
@@ -219,12 +198,10 @@
             background-color: #2e7d32;
             border-color: #2e7d32;
         }
-
         .form-check-label {
             font-size: 0.9rem;
             color: #555;
         }
-
         .form-check-label a {
             color: #2e7d32;
             text-decoration: none;
@@ -244,7 +221,6 @@
             margin-top: 15px;
             transition: background 0.2s;
         }
-
         .btn-submit:hover {
             background-color: #1b5e20;
         }
@@ -257,28 +233,19 @@
             color: #aaa;
             font-size: 0.85rem;
         }
-
-        .divider::before,
-        .divider::after {
+        .divider::before, .divider::after {
             content: '';
             flex: 1;
             border-bottom: 1px solid #eee;
         }
-
-        .divider:not(:empty)::before {
-            margin-right: .5em;
-        }
-
-        .divider:not(:empty)::after {
-            margin-left: .5em;
-        }
+        .divider:not(:empty)::before { margin-right: .5em; }
+        .divider:not(:empty)::after { margin-left: .5em; }
 
         .login-footer {
             text-align: center;
             font-size: 0.95rem;
             color: #555;
         }
-
         .login-footer a {
             color: #2e7d32;
             text-decoration: none;
@@ -291,12 +258,9 @@
                 height: auto;
                 overflow: visible;
             }
-
             .brand-side {
-                display: none;
-                /* Hides image banner cleanly on mobile devices */
+                display: none; /* Hides image banner cleanly on mobile devices */
             }
-
             .form-side {
                 flex: 0 0 100%;
                 padding: 40px 20px;
@@ -304,7 +268,6 @@
         }
     </style>
 </head>
-
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light border-bottom border-light py-3">
@@ -313,9 +276,8 @@
                 <i class="fa-brands fa-pagelines text-dark fs-2"></i>
                 <span class="fs-3 fw-bold" style="color: #1c4b27;">Agri<span style="color: #4cd113;">Link</span></span>
             </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
-                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -330,132 +292,121 @@
                 </ul>
                 <div class="d-flex align-items-center gap-4">
                     <a href="login.html" class="text-decoration-none text-dark fw-semibold small" id="login">Login</a>
-                    <button class="btn px-4 py-2 text-white fw-medium border-0"
-                        style="background-color: #4cd113; border-radius: 6px;" id="reg">Registration</button>
+                    <button class="btn px-4 py-2 text-white fw-medium border-0" style="background-color: #4cd113; border-radius: 6px;" id="reg">Registration</button>
                 </div>
             </div>
         </div>
     </nav>
 
-
-
-    <div class="container main-content-area py-4">
-        <div class="row w-100 align-items-center justify-content-between g-4 m-0">
-            <div class="col-12 col-md-6 col-lg-5 align-self-stretch pt-3">
-
-
-                <div class="brand-side">
-                    <div class="brand-main-text">
-                        <h1>Grow Smarter.<br>Connect Better.</h1>
-                        <p>Join AgriLink and get access to resources, markets, expert advice and tools to grow your
-                            agricultural journey.</p>
-                    </div>
-
-                    <div class="feature-badge-row">
-                        <div class="feature-item">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Trusted</span>
-                            by Farmers
-                        </div>
-                        <div class="feature-item">
-                            <i class="fa-solid fa-users"></i>
-                            <span>Stronger</span>
-                            Connections
-                        </div>
-                        <div class="feature-item">
-                            <i class="fa-solid fa-chart-line"></i>
-                            <span>Better</span>
-                            Outcomes
-                        </div>
-                    </div>
-                </div>
+    <div class="page-container">
+        
+        
+        <div class="brand-side">
+            <div class="brand-main-text">
+                <h1>Grow Smarter.<br>Connect Better.</h1>
+                <p>Join AgriLink and get access to resources, markets, expert advice and tools to grow your agricultural journey.</p>
             </div>
 
-            <div class="col-12 col-md-6 col-lg-5 ">
-
-                <div class="form-side">
-                    <div class="form-wrapper">
-
-                        <div class="avatar-icon-wrap">
-                            <i class="fa-regular fa-user"></i>
-                        </div>
-                        <h3>Create Account</h3>
-                        <div class="subtitle">Join AgriLink and be part of a growing community.</div>
-
-                        <form>
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <div class="input-icon-container">
-                                    <i class="fa-regular fa-user field-icon"></i>
-                                    <input type="text" placeholder="Enter your full name" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <div class="input-icon-container">
-                                    <i class="fa-regular fa-envelope field-icon"></i>
-                                    <input type="email" placeholder="Enter your email address" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <div class="input-icon-container">
-                                    <i class="fa-solid fa-phone field-icon"></i>
-                                    <input type="tel" placeholder="Enter your phone number" required>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Password</label>
-                                <div class="input-icon-container">
-                                    <i class="fa-solid fa-lock field-icon"></i>
-                                    <input type="password" placeholder="Create a password" required>
-                                    <i class="fa-regular fa-eye-slash toggle-password"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Confirm Password</label>
-                                <div class="input-icon-container">
-                                    <i class="fa-solid fa-lock field-icon"></i>
-                                    <input type="password" placeholder="Confirm your password" required>
-                                    <i class="fa-regular fa-eye-slash toggle-password"></i>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Role</label>
-                                <div class="input-icon-container">
-                                    <i class="fa-solid fa-seedling field-icon"></i>
-                                    <select required>
-                                        <option value="" disabled selected>Select your role</option>
-                                        <option value="farmer">Farmer</option>
-                                        <option value="buyer">Buyer / Trader</option>
-                                        <option value="expert">Agricultural Expert</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="form-check my-3">
-                                <input class="form-check-input" type="checkbox" id="termsCheck" required>
-                                <label class="form-check-label" for="termsCheck">
-                                    I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
-                                </label>
-                            </div>
-
-                            <button type="submit" class="btn-submit">Create Account</button>
-
-                            <div class="divider">OR</div>
-
-                            <div class="login-footer">
-                                Already have an account? <a href="login.html">Sign In</a>
-                            </div>
-                        </form>
-
-                    </div>
+            <div class="feature-badge-row">
+                <div class="feature-item">
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>Trusted</span>
+                    by Farmers
                 </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Stronger</span>
+                    Connections
+                </div>
+                <div class="feature-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Better</span>
+                    Outcomes
+                </div>
+            </div>
+        </div>
+
+        <div class="form-side">
+            <div class="form-wrapper">
+                
+                <div class="avatar-icon-wrap">
+                    <i class="fa-regular fa-user"></i>
+                </div>
+                <h3>Create Account</h3>
+                <div class="subtitle">Join AgriLink and be part of a growing community.</div>
+
+                <form>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <div class="input-icon-container">
+                            <i class="fa-regular fa-user field-icon"></i>
+                            <input type="text" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <div class="input-icon-container">
+                            <i class="fa-regular fa-envelope field-icon"></i>
+                            <input type="email" placeholder="Enter your email address" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <div class="input-icon-container">
+                            <i class="fa-solid fa-phone field-icon"></i>
+                            <input type="tel" placeholder="Enter your phone number" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="input-icon-container">
+                            <i class="fa-solid fa-lock field-icon"></i>
+                            <input type="password" placeholder="Create a password" required>
+                            <i class="fa-regular fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <div class="input-icon-container">
+                            <i class="fa-solid fa-lock field-icon"></i>
+                            <input type="password" placeholder="Confirm your password" required>
+                            <i class="fa-regular fa-eye-slash toggle-password"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Role</label>
+                        <div class="input-icon-container">
+                            <i class="fa-solid fa-seedling field-icon"></i>
+                            <select required>
+                                <option value="" disabled selected>Select your role</option>
+                                <option value="farmer">Farmer</option>
+                                <option value="buyer">Buyer / Trader</option>
+                                <option value="expert">Agricultural Expert</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-check my-3">
+                        <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                        <label class="form-check-label" for="termsCheck">
+                            I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Create Account</button>
+
+                    <div class="divider">OR</div>
+
+                    <div class="login-footer">
+                        Already have an account? <a href="login.html">Sign In</a>
+                    </div>
+                </form>
+
             </div>
         </div>
 
@@ -463,5 +414,4 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
