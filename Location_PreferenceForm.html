@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer - Premium Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        /* Modern high-definition aerial agricultural wallpaper with custom pan animation */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #0b0f11;
+            font-family: 'Poppins', 'Segoe UI', sans-serif;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Animated Background Layer */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(10, 16, 13, 0.75), rgba(7, 10, 12, 0.88)), url('https://static.vecteezy.com/system/resources/previews/070/072/783/large_2x/aerial-view-of-green-agricultural-field-in-sunlight-cultivation-landscape-free-photo.jpg');
+            background-size: cover;
+            background-position: center;
+           
+        }
+
+        @keyframes backgroundSlowPan {
+            0% { transform: scale(1); background-position: center; }
+            100% { transform: scale(1.08); background-position: top right; }
+        }
+
+        /* Sidebar Styling - Clean Charcoal Slate */
+        .sb {
+            background-color: rgba(18, 27, 19, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-right: 1px solid rgba(9, 172, 50, 0.08) !important;
+        }
+
+        /* Sidebar dropdown modifications */
+        .dropdown-toggle-sidebar {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            color: #ffffff !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        }
+
+        .dropdown-menu-sidebar {
+            background-color: #12181b !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        }
+
+        .dropdown-item-sidebar {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+        .dropdown-item-sidebar:hover {
+            background-color: #eab308 !important;
+            color: #000000 !important;
+            font-weight: 500;
+        }
+
+        /* Sidebar structural positions */
+        @media (min-width: 992px) {
+            .main-content-wrapper {
+                margin-left: 260px !important;
+                padding: 60px 30px !important;
+            }
+        }
+
+        @media (max-width: 991.98px) {
+            .main-content-wrapper {
+                margin-left: 0px !important;
+                padding: 90px 15px 40px 15px !important;
+            }
+        }
+
+        /* ==========================================================================
+           ATTRACTIVE NEW GOLD & EMERALD GLASSMORPHIC CARD
+           ========================================================================== */
+        
+        .main-content-wrapper .card {
+            background: rgba(18, 24, 27, 0.75) !important;
+            backdrop-filter: blur(20px) saturate(140%);
+            -webkit-backdrop-filter: blur(20px) saturate(140%);
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            border-radius: 24px !important;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: cardReveal 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        }
+
+        @keyframes cardReveal {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Striking header using dark background with dual amber-emerald glow */
+        .main-content-wrapper .card-header.bg-primary {
+            background: rgba(24, 32, 36, 0.9) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+            padding: 25px !important;
+            position: relative;
+        }
+
+        /* Golden highlight stripe under header */
+        .main-content-wrapper .card-header.bg-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #eab308, #10b981, transparent);
+        }
+
+        /* Internal section blocks */
+        .main-content-wrapper .bg-light {
+            background-color: rgba(255, 255, 255, 0.03) !important;
+            border: 1px solid rgba(255, 255, 255, 0.06) !important;
+            border-radius: 16px !important;
+            padding: 22px !important;
+            transition: all 0.3s ease;
+        }
+
+        .main-content-wrapper .bg-light:hover {
+            background-color: rgba(255, 255, 255, 0.05) !important;
+            border-color: rgba(234, 179, 8, 0.3) !important;
+            transform: translateY(-2px);
+        }
+
+        /* Typography Color Modifications */
+        .main-content-wrapper .text-primary {
+            color: #eab308 !important; /* Golden Harvest title */
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 10px rgba(234, 179, 8, 0.2);
+        }
+
+        .main-content-wrapper .text-secondary,
+        .main-content-wrapper .form-label {
+            color: #f1f5f9 !important;
+            font-weight: 500;
+        }
+
+        .main-content-wrapper .form-text, 
+        .main-content-wrapper .text-muted {
+            color: #94a3b8 !important;
+        }
+
+        /* Sophisticated Inputs */
+        .main-content-wrapper .form-control,
+        .main-content-wrapper .form-select {
+            background-color: rgba(11, 15, 17, 0.8) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            color: #ffffff !important;
+            border-radius: 12px !important;
+            padding: 12px 16px;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .main-content-wrapper .form-control:focus,
+        .main-content-wrapper .form-select:focus {
+            border-color: #eab308 !important;
+            box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.2) !important;
+            background-color: rgba(11, 15, 17, 0.95) !important;
+        }
+
+        .main-content-wrapper .form-select option {
+            background-color: #12181b !important;
+            color: #ffffff !important;
+        }
+
+        /* Modern Emerald Sourcing Button with smooth shine effect */
+        .main-content-wrapper .btn-primary {
+            background: linear-gradient(135deg, #059669, #10b981, #059669) !important;
+            background-size: 200% auto !important;
+            border: none !important;
+            color: #ffffff !important;
+            border-radius: 12px !important;
+            font-weight: 600 !important;
+            letter-spacing: 0.5px;
+            padding: 14px !important;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .main-content-wrapper .btn-primary:hover {
+            background-position: right center !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+        }
+
+        .main-content-wrapper .btn-primary:active {
+            transform: translateY(1px);
+        }
+    </style>
+</head>
+
+<body class="text-white">
+
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top border-bottom border-secondary">
+        <div class="container-fluid px-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-warning d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mySidebar" aria-controls="mySidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a class="navbar-brand fw-bold text-warning fs-3 d-flex align-items-center gap-2 m-0" href="#">
+                    <i class="fa-brands fa-pagelines" style="color: #059669;"></i> <label class="text-success" >AgriLink</label> 
+                </a>
+            </div>
+            <div class="d-flex align-items-center ms-auto">
+                <a class="nav-link text-light fs-4 p-2" href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas-lg offcanvas-start text-white p-4 shadow sb mt-4" id="mySidebar"
+        style="width: 260px; min-height: 100vh; position: fixed; left: 0; z-index: 1000; top: 4%;">
+        <div class="d-lg-none d-flex justify-content-between align-items-center mb-4">
+            <h5 class="text-warning fw-bold">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                data-bs-target="#mySidebar"></button>
+        </div>
+        <div class="text-center">
+            <h6 class="text-uppercase text-muted fw-bold small mb-3" style="color:#eab308 !important"><i>Your Profile</i></h6>
+            <div class="bg-black mx-auto border border-warning mb-2"
+                style="width: 90px; height: 90px; border-radius: 50%; overflow: hidden;">
+                <img src="naitik.jpeg" alt="Profile" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <h5 class="fw-bold my-1">Naitik Lohakare</h5>
+            <span class="badge bg-success ">Buyer</span>
+            <hr class="border-secondary my-4">
+            <div class="d-grid gap-2 text-start">
+                <div class="dropdown">
+                    <a class="btn dropdown-toggle dropdown-toggle-sidebar text-start w-100 d-flex justify-content-between align-items-center"
+                        href="F_Dashboard.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Dashboard
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-sidebar w-100">
+                        <li><a class="dropdown-item dropdown-item-sidebar" href="#">Home</a></li>
+                        <li><a class="dropdown-item dropdown-item-sidebar" href="#">Cart</a></li>
+                    </ul>
+                </div>
+                <a href="F_Dashboard_history.html" class="btn btn-outline-warning text-start border-0 text-white-50"><i
+                        class="fa-solid fa-gear me-2"></i> History</a>
+                <a href="#" class="btn btn-outline-warning text-start border-0 text-white-50"><i
+                        class="fa-solid fa-gear me-2"></i> Edit Profile</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content-wrapper">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+
+                    <!-- START OF THE CARD -->
+                    <div class="card shadow border-0">
+                        <!-- Card Header -->
+                        <div class="card-header bg-primary text-white text-center">
+                            <h5 class="card-title mb-0 fw-bold fs-4 text-warning">Location Preference Form</h5>
+                            <p class="small text-white-50 mb-0 mt-1">Specify procurement volumes & sourcing locations</p>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="card-body p-4">
+                            <form>
+                                <!-- 1. Quantity Field -->
+                                <div class="mb-4">
+                                    <label for="quantity" class="form-label mb-2"><i class="fa-solid fa-weight-hanging me-2 text-warning"></i>Quantity</label>
+                                    <input type="number" class="form-control" id="quantity" value="1" min="1" step="0.5" required>
+                                    <div class="form-text mt-2">Increases/decreases by 0.5 (Minimum threshold value is 1).</div>
+                                </div>
+
+                                <hr class="my-4" style="border-top: 1px solid rgba(255,255,255,0.1)">
+
+                                <!-- 2. Primary Preferences Group -->
+                                <div class="bg-light mb-3">
+                                    <h6 class="text-primary fw-bold mb-3 d-flex align-items-center">
+                                        <i class="fa-solid fa-star me-2"></i> Primary Preference Location
+                                    </h6>
+
+                                    <!-- 1st Preferred State Dropdown -->
+                                    <div class="mb-3">
+                                        <label for="state1" class="form-label text-secondary small mb-2">Preferred State</label>
+                                        <select class="form-select" id="state1" required>
+                                            <option value="" selected disabled>Choose State...</option>
+                                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chandigarh">Chandigarh</option>
+                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Ladakh">Ladakh</option>
+                                            <option value="Lakshadweep">Lakshadweep</option>
+                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="Odisha">Odisha</option>
+                                            <option value="Puducherry">Puducherry</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="Uttarakhand">Uttarakhand</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- 1st Preferred District Text Input -->
+                                    <div class="mb-0">
+                                        <label for="district1" class="form-label text-secondary small mb-2">Preferred District</label>
+                                        <input type="text" class="form-control" id="district1" placeholder="Type district name..." required>
+                                    </div>
+                                </div>
+
+                                <!-- 3. Secondary Preferences Group -->
+                                <div class="bg-light mb-4">
+                                    <h6 class="text-secondary fw-bold mb-3 d-flex align-items-center text-white-50">
+                                        <i class="fa-regular fa-star me-2 text-warning"></i> Secondary Preference (Optional)
+                                    </h6>
+
+                                    <!-- 2nd Preferred State Dropdown -->
+                                    <div class="mb-3">
+                                        <label for="state2" class="form-label text-secondary small mb-2">Secondary State</label>
+                                        <select class="form-select" id="state2">
+                                            <option value="" selected disabled>Choose State...</option>
+                                            <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chandigarh">Chandigarh</option>
+                                            <option value="Chhattisgarh">Chhattisgarh</option>
+                                            <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                                            <option value="Delhi">Delhi</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                            <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Ladakh">Ladakh</option>
+                                            <option value="Lakshadweep">Lakshadweep</option>
+                                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="Odisha">Odisha</option>
+                                            <option value="Puducherry">Puducherry</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                            <option value="Uttarakhand">Uttarakhand</option>
+                                            <option value="West Bengal">West Bengal</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- 2nd Preferred District Text Input -->
+                                    <div class="mb-0">
+                                        <label for="district2" class="form-label text-secondary small mb-2">Secondary District</label>
+                                        <input type="text" class="form-control" id="district2" placeholder="Type district name...">
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="d-grid mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg fs-6 py-3">
+                                        <i class="fa-solid fa-check-double me-2"></i>Submit Preferences
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- END OF THE CARD -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
