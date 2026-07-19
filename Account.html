@@ -1,50 +1,60 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriLink - Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="External_CSS.css">
+
     <style>
         * {
             box-sizing: border-box;
         }
 
-        body { 
-            background-image: url(Account_img.jpeg);
+        body {
+            background-image: url(login_image.png);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            
+
         }
 
         /* --- Navbar Custom Styles --- */
         .navbar-custom {
             background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 10px 5%;
         }
+
         .logo-container {
             display: flex;
             align-items: center;
             gap: 8px;
             color: green;
         }
+
         .logo-container h1 {
             font-size: 24px;
             margin: 0;
             font-weight: bold;
         }
+
         .logo-container .bite {
             color: #333;
         }
+
         .navlink-custom .nav-link {
             margin: 0 10px;
             color: #333 !important;
             font-weight: 500;
         }
+
         .navlink-custom .nav-link:hover {
             color: green !important;
         }
@@ -53,54 +63,60 @@
         .main-content-area {
             flex: 1;
             display: flex;
-            align-items: stretch; /* Stretch columns to take full height for correct alignment */
+            align-items: stretch;
+            /* Stretch columns to take full height for correct alignment */
         }
 
         /* Branding text (Left Side) */
         .brand-text-wrapper {
             color: white;
-            padding: 20px ;
+            padding: 20px;
             height: 100%;
         }
+
         .brand-header-inline {
             display: flex;
             align-items: center;
             gap: 15px;
             color: #2c6e49;
         }
+
         .brand-header-inline i {
             font-size: 4rem;
         }
+
         .brand-header-inline h1 {
             font-size: 3.5rem;
             margin: 0;
             font-weight: bold;
         }
+
         .brand-text-wrapper h3 {
             font-size: 1.8rem;
             margin-top: 10px;
-            color:green;
+            color: green;
         }
+
         .brand-text-wrapper p {
             font-size: 1.2rem;
             font-style: italic;
             margin-top: 15px;
-            margin-left: 40px;
+            margin-left: 25px;
             font-family: sans-serif;
-            color: rgb(255, 253, 253);
+            color: rgb(0, 0, 0);
         }
 
         /* Login Card Wrapper (Right Side) */
         .child {
             width: 100%;
-            max-width: 400px; 
+            max-width: 400px;
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0px 10px 30px rgba(0,0,0,0.15);
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
             background-color: rgba(255, 255, 255, 0.9);
             margin: auto;
         }
-         
+
         #h1 {
             margin: 0 0 10px 0;
             text-align: center;
@@ -113,11 +129,13 @@
             gap: 5px;
             margin-bottom: 20px;
         }
+
         #pg {
             color: green;
             font-weight: bold;
             margin: 0;
         }
+
         #p {
             margin: 0;
         }
@@ -131,6 +149,7 @@
             cursor: pointer;
             font-weight: bold;
         }
+
         .bot button:hover {
             background-color: rgb(75, 220, 75);
             color: white;
@@ -143,7 +162,7 @@
             border-radius: 5px;
             font-size: 14px;
         }
-        
+
         #la {
             color: rgb(66, 179, 17);
             text-align: end;
@@ -161,18 +180,22 @@
             font-weight: bold;
             transition: 0.2s;
         }
+
         #but1 {
             background-color: #333;
             color: white;
         }
+
         #but1:hover {
             background-color: rgb(75, 220, 75);
             border-color: rgb(75, 220, 75);
         }
+
         #but2 {
             background-color: transparent;
             color: black;
         }
+
         #but2:hover {
             background-color: rgb(75, 220, 75);
             color: white;
@@ -196,14 +219,159 @@
             padding: 10px;
             margin-top: 5px;
         }
+
         .help i {
             font-size: 24px;
             color: green;
         }
+
         .help p {
             margin: 0;
             font-size: 13px;
             line-height: 1.4;
+        }
+
+        /* --- Right Side: Registration Form Panel --- */
+        .form-side {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px black;
+            background-color: rgb(244, 246, 247);
+            margin-top: 50px;
+        }
+
+        .form-wrapper {
+            width: 100%;
+            max-width: 520px;
+        }
+
+        .avatar-icon-wrap {
+            width: 50px;
+            height: 50px;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            margin: 0 auto 15px auto;
+        }
+
+        .form-wrapper h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1c4b27;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .form-wrapper .subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 30px;
+        }
+
+        /* Form Labels & Styled Fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .input-icon-container {
+            position: relative;
+        }
+
+        .input-icon-container i.field-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 1rem;
+        }
+
+        .input-icon-container i.toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            cursor: pointer;
+        }
+
+        .input-icon-container input,
+        .input-icon-container select {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 1px solid #dcdcdc;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .input-icon-container input:focus,
+        .input-icon-container select:focus {
+            border-color: #2e7d32;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+        }
+
+         /* Action Buttons */
+        .btn-submit {
+            width: 100%;
+            background-color: #2e7d32;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            margin-top: 15px;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover {
+            background-color: #1b5e20;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 25px 0;
+            color: #504747;
+            font-size: 0.9rem;
+        }
+        .divider::before, .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #413838;
+        }
+        .divider:not(:empty)::before { margin-right: .5em; }
+        .divider:not(:empty)::after { margin-left: .5em; }
+
+        .login-footer {
+            text-align: center;
+            font-size: 0.95rem;
+            color: black;
+        }
+        .login-footer a {
+            color: #2e7d32;
+            text-decoration: none;
+            font-weight: 600;
         }
 
         /* Mobile specific adjustments */
@@ -212,17 +380,21 @@
                 background-position: left center;
                 padding-top: 70px;
             }
+
             .brand-text-wrapper {
                 text-align: center;
                 height: auto;
             }
+
             .brand-header-inline {
                 justify-content: center;
             }
+
             .navbar-nav {
                 padding-top: 10px;
                 gap: 8px;
             }
+
             .nav-buttons {
                 margin-top: 10px;
                 width: 100%;
@@ -259,10 +431,15 @@
         
         }
     </style>
-
 </head>
+
 <body>
+<<<<<<< HEAD
       <nav class="navbar navbar-expand-md navbar-custom fixed-top">
+=======
+
+    <nav class="navbar navbar-expand-md navbar-custom fixed-top">
+>>>>>>> 1e00b014b1b34488f6734954ba7193f253fcc328
         <div class="container-fluid px-0">
             <a class="navbar-brand logo-container" href="#">
                 <i class="fa-brands fa-pagelines fa-xl"></i>
@@ -272,7 +449,12 @@
                 </div>
             </a>
 
+<<<<<<< HEAD
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAgriLink" aria-controls="navbarAgriLink" aria-expanded="false" aria-label="Toggle navigation">
+=======
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarAgriLink"
+                aria-controls="navbarAgriLink" aria-expanded="false" aria-label="Toggle navigation">
+>>>>>>> 1e00b014b1b34488f6734954ba7193f253fcc328
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -285,17 +467,235 @@
                     <a class="nav-link" href="#">About Us</a>
                     <a class="nav-link" href="#">Contact Us</a>
                 </div>
+<<<<<<< HEAD
                 
                 <div class="d-flex gap-2 nav-buttons justify-content-end">
                     <button class="btn btn-success btn-sm" id="login">Login</button>
                     <button class="btn btn-outline-success btn-sm" id="reg" style="background:green; color: rgb(236, 240, 236); border: 1px solid green;">Registration</button>
+=======
+
+                <div class="d-flex gap-2 nav-buttons justify-content-end">
+                    <button class="btn btn-success btn-sm" id="login">Login</button>
+                    <button class="btn btn-outline-success btn-sm" id="reg"
+                        style="background:green; color: rgb(236, 240, 236); border: 1px solid green;">Registration</button>
+>>>>>>> 1e00b014b1b34488f6734954ba7193f253fcc328
                 </div>
             </div>
         </div>
     </nav>
 
+<<<<<<< HEAD
 
    
+=======
+    <div class="container main-content-area py-4">
+        <div class="row w-100 align-items-center justify-content-between g-4 m-0">
+
+            <div class="col-12 col-md-6 col-lg-5 align-self-stretch pt-3">
+                <div class="brand-text-wrapper d-flex flex-column">
+                    <div>
+                        <div class="brand-header-inline">
+                            <i class="fa-brands fa-pagelines"></i>
+                            <h1>AgriLink</h1>
+                        </div>
+                        <h3>Growing Together, Trading Better</h3>
+                    </div>
+
+                    <div class="mt-auto pt-5">
+                        <p>" Bridging the gap between<br>farmers and buyers. "</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-7 form-side">
+                <div class="form-wrapper">
+
+                    <div class="avatar-icon-wrap">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <h3>Create Account</h3>
+                    <div class="subtitle">Join AgriLink and be part of a growing community.</div>
+
+                    <form>
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <div class="input-icon-container">
+                                <i class="fa-regular fa-user field-icon"></i>
+                                <input type="text" placeholder="Enter your full name" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <div class="input-icon-container">
+                                <i class="fa-regular fa-envelope field-icon"></i>
+                                <input type="email" placeholder="Enter your email address" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label> profile image</label>
+                            <div class="input-icon-container">
+                                <i class="fa-regular fa-user field-icon"></i>
+                                <input type="file" placeholder="Add profile image" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <div class="input-icon-container">
+                                <i class="fa-solid fa-phone field-icon"></i>
+                                <input type="tel" placeholder="Enter your phone number" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Full Address</label>
+                            <div class="input-icon-container">
+                                <i class="fa-regular fa-user field-icon"></i>
+                                <input type="text" placeholder="Enter your full address" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>State</label>
+                            <div class="input-icon-container">
+                                <i class="fa-regular fa-user field-icon"></i>
+                                <select id="indian-states" name="states">
+                                    <option value="" disabled selected>Select State </option>
+                                    <option value="AP">Andhra Pradesh</option>
+                                    <option value="AR">Arunachal Pradesh</option>
+                                    <option value="AS">Assam</option>
+                                    <option value="BR">Bihar</option>
+                                    <option value="CT">Chhattisgarh</option>
+                                    <option value="GA">Goa</option>
+                                    <option value="GJ">Gujarat</option>
+                                    <option value="HR">Haryana</option>
+                                    <option value="HP">Himachal Pradesh</option>
+                                    <option value="JH">Jharkhand</option>
+                                    <option value="KA">Karnataka</option>
+                                    <option value="KL">Kerala</option>
+                                    <option value="MP">Madhya Pradesh</option>
+                                    <option value="MH">Maharashtra</option>
+                                    <option value="MN">Manipur</option>
+                                    <option value="ML">Meghalaya</option>
+                                    <option value="MZ">Mizoram</option>
+                                    <option value="NL">Nagaland</option>
+                                    <option value="OR">Odisha</option>
+                                    <option value="PB">Punjab</option>
+                                    <option value="RJ">Rajasthan</option>
+                                    <option value="SK">Sikkim</option>
+                                    <option value="TN">Tamil Nadu</option>
+                                    <option value="TG">Telangana</option>
+                                    <option value="TR">Tripura</option>
+                                    <option value="UP">Uttar Pradesh</option>
+                                    <option value="UT">Uttarakhand</option>
+                                    <option value="WB">West Bengal</option>
+
+                                    <option value="AN">Andaman and Nicobar Islands</option>
+                                    <option value="CH">Chandigarh</option>
+                                    <option value="DH">Dadra and Nagar Haveli and Daman and Diu</option>
+                                    <option value="DL">Delhi</option>
+                                    <option value="JK">Jammu and Kashmir</option>
+                                    <option value="LA">Ladakh</option>
+                                    <option value="LD">Lakshadweep</option>
+                                    <option value="PY">Puducherry</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label> Distrit</label>
+                            <div class="input-icon-container">
+                                <i class="fa-regular fa-user field-icon"></i>
+                                <input type="text" placeholder="Enter your Distric" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Taluka</label>
+                            <div class="input-icon-container">
+                                <i class="fa-regular fa-user field-icon"></i>
+                                <input type="text" placeholder="Enter your Taluka" required>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Password</label>
+                            <div class="input-icon-container">
+                                <i class="fa-solid fa-lock field-icon"></i>
+                                <input type="password" placeholder="Create a password" required id="pass">
+                                <i class="fa-regular fa-eye-slash toggle-password"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Confirm Password</label>
+                            <div class="input-icon-container">
+                                <i class="fa-solid fa-lock field-icon"></i>
+                                <input type="password" placeholder="Confirm your password" required id="conpass">
+                                <i class="fa-regular fa-eye-slash toggle-password"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Role</label>
+                            <div class="input-icon-container">
+                                <i class="fa-solid fa-seedling field-icon"></i>
+                                <select required>
+                                    <option value="" disabled selected>Select your role</option>
+                                    <option value="farmer">Farmer</option>
+                                    <option value="buyer">Buyer / Trader</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-check my-3">
+                            <input class="form-check-input" type="checkbox" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">
+                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn-submit" onclick="msg();">Create Account</button>
+
+                        <div class="divider">OR</div>
+
+                        <div class="login-footer">
+                            Already have an account? <a href="login.html">Sign In</a>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function msg()
+        {
+            var loginButton=document.getElementById("pass").value;
+            var password=document.getElementById("compass").value;
+            if(pass!=conpass){
+                alert("Missmatch password");
+                return false;
+            }
+            else{
+                alert("correct password");
+            }
+            
+        }
+    </script>
+>>>>>>> 1e00b014b1b34488f6734954ba7193f253fcc328
 
 </body>
+
 </html>
