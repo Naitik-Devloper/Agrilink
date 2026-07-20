@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmer - Dashboard</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2e7d32;
+            --dark-bg: #1b5e20;
+            --light-green: #e8f5e9;
+            --bg-body: #f4f6f4;
+            --text-dark: #333333;
+        }
+
+        body {
+            background-color: var(--bg-body) !important;
+            color: var(--text-dark) !important;
+        }
+
+        .sb {
+            background-color: #1C3F24 !important;
+        }
+
+        /* Fixes desktop layout to align content correctly next to the sidebar */
+        @media (min-width: 992px) {
+            .main-content-wrapper {
+                margin-left: 260px !important;
+                padding: 30px !important;
+                margin-top: 56px; /* Space for the fixed navbar */
+            }
+        }
+
+        /* Resets margins for mobile view when sidebar shrinks */
+        @media (max-width: 991.98px) {
+            .main-content-wrapper {
+                margin-left: 0px !important;
+                padding: 15px !important;
+                margin-top: 56px;
+            }
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-menu li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu li a:hover, .sidebar-menu li.active a {
+            background-color: var(--primary-green);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .text-agri {
+            color: var(--primary-green) !important;
+        }
+
+        .table-agri-header {
+            background-color: var(--light-green) !important;
+            color: var(--primary-green) !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Fixed Top Navbar -->
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top navbar-dark">
+        <div class="container-fluid px-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-success d-lg-none me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mySidebar" aria-controls="mySidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a class="navbar-brand fw-bold text-success fs-3 d-flex align-items-center gap-2 m-0" href="#">
+                <i class="fa-brands fa-pagelines"></i> AgriLink
+            </a>
+            </div>
+            <div class="d-flex align-items-center ms-auto">
+                <a class="nav-link text-success fs-4 p-2" href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation Drawer -->
+    <div class="offcanvas-lg offcanvas-start text-white border-end border-secondary p-4 shadow sb" id="mySidebar"
+        style="width: 260px; min-height: 100vh; position: fixed; left: 0; z-index: 1000; top: 56px;">
+        <div class="text-center">
+            <div class="d-grid gap-2 text-start">
+                <ul class="sidebar-menu p-0">
+                    <li><a href="#"></a></li>
+                    <li class="active"><a href="logistics _Dashbord.html">Logistics & Management</a></li>
+                    <li><a href="demo.html">Drivers & Fleet Registry</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Dynamic Content Workspace Area -->
+    <div class="main-content-wrapper flex-grow-1">
+        <div class="container-fluid">
+            
+            <!-- Page Identity Header Area -->
+            <div class="header-title pt-4 mb-4">
+                <h1 class="h2 text-agri fw-bold mb-1">Logistics Management</h1>
+                <p class="text-muted">Track your agricultural supply chain movements and driver deployments.</p>
+            </div>
+
+            <!-- Metrics Layer (KPI Summary Section) -->
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                    <div class="card h-100 p-3 border-light shadow-sm bg-white">
+                        <div class="text-uppercase text-muted small fw-bold tracking-wider">Total Shipments</div>
+                        <div class="h2 text-agri fw-bold mt-2 mb-0">148</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                    <div class="card h-100 p-3 border-light shadow-sm bg-white">
+                        <div class="text-uppercase text-muted small fw-bold tracking-wider">In Transit</div>
+                        <div class="h2 text-agri fw-bold mt-2 mb-0">24</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                    <div class="card h-100 p-3 border-light shadow-sm bg-white">
+                        <div class="text-uppercase text-muted small fw-bold tracking-wider">Vehicles Active</div>
+                        <div class="h2 text-agri fw-bold mt-2 mb-0">18 / 25</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-xl-3">
+                    <div class="card h-100 p-3 border-light shadow-sm bg-white">
+                        <div class="text-uppercase text-muted small fw-bold tracking-wider">Spoilage Alert Risk</div>
+                        <div class="h2 text-danger fw-bold mt-2 mb-0">0%</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Spacing Break Container -->
+            <div class="my-4"></div>
+
+            <!-- Data Table Tracking Monitor Area -->
+            <div class="card p-4 border-light shadow-sm bg-white mb-4">
+                <h2 class="h5 text-agri fw-bold mb-3">Active Shipment Tracking Monitor</h2>
+                
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle mb-0">
+                        <thead>
+                            <tr class="table-agri-header">
+                                <th class="py-3 px-3">Shipment ID</th>
+                                <th class="py-3">Produce Details</th>
+                                <th class="py-3">Origin location</th>
+                                <th class="py-3">Destination location</th>
+                                <th class="py-3">Assigned Transport</th>
+                                <th class="py-3 px-3">Delivery Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-3 fw-medium text-dark">#TRK-9081</td>
+                                <td class="text-dark">Nashik Onions (2,500 kg)</td>
+                                <td class="text-dark">Green Valley Farm</td>
+                                <td class="text-dark">Mumbai Wholesale Market</td>
+                                <td class="text-dark">Tata Ace (MH-15-EX-4412)</td>
+                                <td class="px-3"><span class="badge bg-warning-subtle text-warning-emphasis rounded-pill px-3 py-2">In Transit</span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 fw-medium text-dark">#TRK-9082</td>
+                                <td class="text-dark">Alphonso Mangoes (800 kg)</td>
+                                <td class="text-dark">Ratnagiri Orchards</td>
+                                <td class="text-dark">Pune Cold Storage Hub</td>
+                                <td class="text-dark">Refrigerated Container</td>
+                                <td class="px-3"><span class="badge bg-info-subtle text-info-emphasis rounded-pill px-3 py-2">Pending Loading</span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 fw-medium text-dark">#TRK-9079</td>
+                                <td class="text-dark">Organic Tomatoes (1,200 kg)</td>
+                                <td class="text-dark">Saraswati Farms</td>
+                                <td class="text-dark">Local Agri Market Center</td>
+                                <td class="text-dark">Mahindra Bolero Pickup</td>
+                                <td class="px-3"><span class="badge bg-success-subtle text-success-emphasis rounded-pill px-3 py-2">Delivered</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
