@@ -15,7 +15,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            background-color: #0b0f11;
+            background-color: #feffff;
             font-family: 'Poppins', 'Segoe UI', sans-serif;
             min-height: 100vh;
             position: relative;
@@ -29,9 +29,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: linear-gradient(rgba(10, 16, 13, 0.75), rgba(7, 10, 12, 0.88)), url('https://static.vecteezy.com/system/resources/previews/070/072/783/large_2x/aerial-view-of-green-agricultural-field-in-sunlight-cultivation-landscape-free-photo.jpg');
-            background-size: cover;
-            background-position: center;
+            
            
         }
 
@@ -42,7 +40,7 @@
 
         /* Sidebar Styling - Clean Charcoal Slate */
         .sb {
-            background-color: rgba(18, 27, 19, 0.95) !important;
+            background-color: #1C3F24!important;
             backdrop-filter: blur(10px);
             border-right: 1px solid rgba(9, 172, 50, 0.08) !important;
         }
@@ -89,16 +87,17 @@
            ========================================================================== */
         
         .main-content-wrapper .card {
-            background: rgba(18, 24, 27, 0.75) !important;
+            background:#feffff !important;
             backdrop-filter: blur(20px) saturate(140%);
             -webkit-backdrop-filter: blur(20px) saturate(140%);
             border: 1px solid rgba(255, 255, 255, 0.1) !important;
             border-radius: 24px !important;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6) !important;
+            box-shadow: 0 25px 25px rgba(0, 0, 0, 0.15) !important;
             transform: translateY(20px);
             opacity: 0;
             animation: cardReveal 0.8s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+            margin-top: 30px;
         }
 
         @keyframes cardReveal {
@@ -109,11 +108,12 @@
         }
 
         /* Striking header using dark background with dual amber-emerald glow */
-        .main-content-wrapper .card-header.bg-primary {
-            background: rgba(24, 32, 36, 0.9) !important;
+        .main-content-wrapper .card-header {
+            background: #feffff !important;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
             padding: 25px !important;
             position: relative;
+            
         }
 
         /* Golden highlight stripe under header */
@@ -129,7 +129,7 @@
 
         /* Internal section blocks */
         .main-content-wrapper .bg-light {
-            background-color: rgba(255, 255, 255, 0.03) !important;
+            background-color: rgba(201, 22, 22, 0.03) !important;
             border: 1px solid rgba(255, 255, 255, 0.06) !important;
             border-radius: 16px !important;
             padding: 22px !important;
@@ -137,21 +137,21 @@
         }
 
         .main-content-wrapper .bg-light:hover {
-            background-color: rgba(255, 255, 255, 0.05) !important;
-            border-color: rgba(234, 179, 8, 0.3) !important;
+           
+            border-color: rgba(234, 178, 8, 0.637) !important;
             transform: translateY(-2px);
         }
 
         /* Typography Color Modifications */
         .main-content-wrapper .text-primary {
-            color: #eab308 !important; /* Golden Harvest title */
+            color: #eab208fb !important; /* Golden Harvest title */
             letter-spacing: 0.5px;
             text-shadow: 0 2px 10px rgba(234, 179, 8, 0.2);
         }
 
-        .main-content-wrapper .text-secondary,
+        .main-content-wrapper ,
         .main-content-wrapper .form-label {
-            color: #f1f5f9 !important;
+            color: black !important;
             font-weight: 500;
         }
 
@@ -163,9 +163,9 @@
         /* Sophisticated Inputs */
         .main-content-wrapper .form-control,
         .main-content-wrapper .form-select {
-            background-color: rgba(11, 15, 17, 0.8) !important;
-            border: 1px solid rgba(255, 255, 255, 0.12) !important;
-            color: #ffffff !important;
+            background-color: #feffff !important;
+            border: 1px solid rgb(19, 17, 17) !important;
+            color: black !important;
             border-radius: 12px !important;
             padding: 12px 16px;
             transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -173,14 +173,14 @@
 
         .main-content-wrapper .form-control:focus,
         .main-content-wrapper .form-select:focus {
-            border-color: #eab308 !important;
-            box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.2) !important;
-            background-color: rgba(11, 15, 17, 0.95) !important;
+            border-color: #10b981 !important;
+            box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15) !important;
+            background-color: #feffff !important;
         }
 
         .main-content-wrapper .form-select option {
-            background-color: #12181b !important;
-            color: #ffffff !important;
+            
+            color: #000000 !important;
         }
 
         /* Modern Emerald Sourcing Button with smooth shine effect */
@@ -230,8 +230,8 @@
         </div>
     </nav>
 
-    <div class="offcanvas-lg offcanvas-start text-white p-4 shadow sb mt-4" id="mySidebar"
-        style="width: 260px; min-height: 100vh; position: fixed; left: 0; z-index: 1000; top: 4%;">
+    <div class="offcanvas-lg  offcanvas-start text-white p-4 shadow sb mt-4" id="mySidebar"
+        style="width: 260px; min-height: 100vh; position: fixed; left: 0; z-index: 1000; top: 4%; color: #059669;">
         <div class="d-lg-none d-flex justify-content-between align-items-center mb-4">
             <h5 class="text-warning fw-bold">Menu</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
@@ -275,7 +275,7 @@
                         <!-- Card Header -->
                         <div class="card-header bg-primary text-white text-center">
                             <h5 class="card-title mb-0 fw-bold fs-4 text-warning">Location Preference Form</h5>
-                            <p class="small text-white-50 mb-0 mt-1">Specify procurement volumes & sourcing locations</p>
+                            <p class="small text-black mb-0 mt-1">Specify procurement volumes & sourcing locations</p>
                         </div>
 
                         <!-- Card Body -->
@@ -283,7 +283,7 @@
                             <form>
                                 <!-- 1. Quantity Field -->
                                 <div class="mb-4">
-                                    <label for="quantity" class="form-label mb-2"><i class="fa-solid fa-weight-hanging me-2 text-warning"></i>Quantity</label>
+                                    <label for="quantity" class="form-label mb-2"><i class="fa-solid fa-weight-hanging me-2 text-warning"></i>Available Quantity (x100)</label>
                                     <input type="number" class="form-control" id="quantity" value="1" min="1" step="0.5" required>
                                     <div class="form-text mt-2">Increases/decreases by 0.5 (Minimum threshold value is 1).</div>
                                 </div>
@@ -298,7 +298,7 @@
 
                                     <!-- 1st Preferred State Dropdown -->
                                     <div class="mb-3">
-                                        <label for="state1" class="form-label text-secondary small mb-2">Preferred State</label>
+                                        <label for="state1" class="form-label text-black small mb-2">Preferred State</label>
                                         <select class="form-select" id="state1" required>
                                             <option value="" selected disabled>Choose State...</option>
                                             <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -342,20 +342,20 @@
 
                                     <!-- 1st Preferred District Text Input -->
                                     <div class="mb-0">
-                                        <label for="district1" class="form-label text-secondary small mb-2">Preferred District</label>
+                                        <label for="district1" class="form-label text-danger small mb-2">Preferred District</label>
                                         <input type="text" class="form-control" id="district1" placeholder="Type district name..." required>
                                     </div>
                                 </div>
 
                                 <!-- 3. Secondary Preferences Group -->
                                 <div class="bg-light mb-4">
-                                    <h6 class="text-secondary fw-bold mb-3 d-flex align-items-center text-white-50">
+                                    <h6 class="text-secondary fw-bold mb-3 d-flex align-items-center text-black">
                                         <i class="fa-regular fa-star me-2 text-warning"></i> Secondary Preference (Optional)
                                     </h6>
 
                                     <!-- 2nd Preferred State Dropdown -->
                                     <div class="mb-3">
-                                        <label for="state2" class="form-label text-secondary small mb-2">Secondary State</label>
+                                        <label for="state2" class="form-label text-black small mb-2">Secondary State</label>
                                         <select class="form-select" id="state2">
                                             <option value="" selected disabled>Choose State...</option>
                                             <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
@@ -399,7 +399,7 @@
 
                                     <!-- 2nd Preferred District Text Input -->
                                     <div class="mb-0">
-                                        <label for="district2" class="form-label text-secondary small mb-2">Secondary District</label>
+                                        <label for="district2" class="form-label text-black small mb-2">Secondary District</label>
                                         <input type="text" class="form-control" id="district2" placeholder="Type district name...">
                                     </div>
                                 </div>
@@ -422,5 +422,6 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 
 </html>
