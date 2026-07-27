@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Logistics Cards</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2e7d32;
+            --dark-bg: #1b5e20;
+            --light-green: #e8f5e9;
+            --bg-body: #f4f6f4;
+            --text-dark: #333333;
+        }
+
+        body {
+            background-color: var(--bg-body) !important;
+            color: var(--text-dark) !important;
+        }
+
+        .sb {
+            background-color: #1C3F24 !important;
+        }
+
+        /* Desktop layout alignment */
+        @media (min-width: 992px) {
+            .main-content-wrapper {
+                margin-left: 260px !important;
+                padding: 30px !important;
+                margin-top: 56px;
+            }
+        }
+
+        /* Mobile layout adjustment */
+        @media (max-width: 991.98px) {
+            .main-content-wrapper {
+                margin-left: 0px !important;
+                padding: 15px !important;
+                margin-top: 56px;
+            }
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-menu li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu li a:hover, .sidebar-menu li.active a {
+            background-color: var(--primary-green);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .text-agri {
+            color: var(--primary-green) !important;
+        }
+
+        /* Logistic Card Specific Styling */
+        .logistic-card {
+            border: 1px solid #e0e0e0;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .logistic-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+        }
+
+        .route-badge {
+            background-color: #f8f9fa;
+            border-left: 3px solid var(--primary-green);
+            padding: 10px;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+
+   <!-- Fixed Top Navbar Component -->
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top navbar-dark">
+        <div class="container-fluid px-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-success d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mySidebar" aria-controls="mySidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a class="navbar-brand fw-bold text-success fs-3 d-flex align-items-center gap-2 m-0" href="#">
+                    <i class="fa-brands fa-pagelines"></i> AgriLink
+                </a>
+            </div>
+            <div class="d-flex align-items-center ms-auto">
+                <a class="nav-link text-success fs-4 p-2" href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation Drawer -->
+     <div class="offcanvas-lg offcanvas-start text-white border-end border-secondary p-4 shadow sb" id="mySidebar"
+        style="width: 260px; min-height: 100vh; position: fixed; left: 0; z-index: 1000; top: 56px;">
+        <div class="text-center">
+            <div class="d-grid gap-2 text-start">
+                <ul class="sidebar-menu p-0">
+                    <li><a href="A_farmer.html"><i class="fa-solid fa-wheat-awn me-2"></i>Registered Farmers</a></li>
+                    <li><a href="A_company.html"><i class="fa-solid fa-building me-2"></i>Registered Company</a></li>
+                    <li><a href="A_bidding.html"><i class="fa-solid fa-gavel me-2"></i>Current Bidding</a></li>
+                    <li><a href="A_Feedback.html"><i class="fa-solid fa-comments me-2"></i>Feedback</a></li>
+                    <li class="active"><a href="demo.html"><i class="fa-solid fa-comments me-2"></i>Logistic</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Workspace Area -->
+    <div class="main-content-wrapper flex-grow-1 mt-3">
+        <div class="container-fluid">
+            
+            <!-- Logistics Section Header & Controls -->
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-4">
+                <div>
+                    <h2 class="h5 text-agri fw-bold mb-1" style="margin-top: 50px;">Active Shipments & Logistics Cards</h2>
+                    <p class="text-muted small mb-0">Track and manage active transports and shipment status.</p>
+                </div>
+                
+                <!-- Search & Status Filter Controls -->
+                <div class="d-flex gap-2">
+                    <input type="text" id="cardSearchInput" class="form-control form-control-sm" placeholder="Search Driver, Produce, Location..." onkeyup="filterCards()">
+                    <select id="statusCardFilter" class="form-select form-select-sm" onchange="filterCards()">
+                        <option value="ALL">All Status</option>
+                        <option value="In Transit">In Transit</option>
+                        <option value="Pending Loading">Pending Loading</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- LOGISTICS CARDS GRID SECTION -->
+            <div class="row g-4" id="logisticsCardsContainer">
+
+                <!-- Card 1: In Transit -->
+                <div class="col-12 col-md-6 col-lg-4 logistic-card-item">
+                    <div class="card h-100 shadow-sm border-0 bg-white p-3 rounded-3 logistic-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-warning-subtle text-warning-emphasis rounded-pill px-3 py-2 status-badge">
+                                <i class="fa-solid fa-truck-moving me-1"></i> In Transit
+                            </span>
+                            <small class="text-muted fw-bold">ID: #LOG-101</small>
+                        </div>
+                        
+                        <h5 class="fw-bold text-dark mb-1 produce-name">Nashik Onions</h5>
+                        <p class="text-muted small mb-3"><i class="fa-solid fa-weight-hanging me-1"></i> Quantity: <strong>55 x 100KG</strong></p>
+
+                        <!-- Route Information -->
+                        <div class="route-badge mb-3">
+                            <div class="small text-muted"><i class="fa-solid fa-location-dot text-danger me-1"></i> <strong>From:</strong> Green Valley Farm</div>
+                            <div class="small text-muted mt-1"><i class="fa-solid fa-flag-checkered text-success me-1"></i> <strong>To:</strong> Mumbai Wholesale Market</div>
+                        </div>
+
+                        <hr class="my-2 border-light">
+
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <div>
+                                <small class="text-muted d-block">Driver</small>
+                                <strong class="text-dark driver-name"><i class="fa-solid fa-user-circle me-1"></i> Vikram</strong>
+                            </div>
+                            <div class="text-end">
+                                <small class="text-muted d-block">Vehicle</small>
+                                <small class="fw-semibold text-agri">Tata Ace (MH-15-EX-4412)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2: Pending Loading -->
+                <div class="col-12 col-md-6 col-lg-4 logistic-card-item">
+                    <div class="card h-100 shadow-sm border-0 bg-white p-3 rounded-3 logistic-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-info-subtle text-info-emphasis rounded-pill px-3 py-2 status-badge">
+                                <i class="fa-solid fa-clock me-1"></i> Pending Loading
+                            </span>
+                            <small class="text-muted fw-bold">ID: #LOG-102</small>
+                        </div>
+                        
+                        <h5 class="fw-bold text-dark mb-1 produce-name">Alphonso Mangoes</h5>
+                        <p class="text-muted small mb-3"><i class="fa-solid fa-weight-hanging me-1"></i> Quantity: <strong>24.5 x 100KG</strong></p>
+
+                        <!-- Route Information -->
+                        <div class="route-badge mb-3">
+                            <div class="small text-muted"><i class="fa-solid fa-location-dot text-danger me-1"></i> <strong>From:</strong> Ratnagiri Orchards</div>
+                            <div class="small text-muted mt-1"><i class="fa-solid fa-flag-checkered text-success me-1"></i> <strong>To:</strong> Pune Cold Storage Hub</div>
+                        </div>
+
+                        <hr class="my-2 border-light">
+
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <div>
+                                <small class="text-muted d-block">Driver</small>
+                                <strong class="text-dark driver-name"><i class="fa-solid fa-user-circle me-1"></i> Rahul</strong>
+                            </div>
+                            <div class="text-end">
+                                <small class="text-muted d-block">Vehicle</small>
+                                <small class="fw-semibold text-agri">Refrigerated Container</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3: Delivered -->
+                <div class="col-12 col-md-6 col-lg-4 logistic-card-item">
+                    <div class="card h-100 shadow-sm border-0 bg-white p-3 rounded-3 logistic-card">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success-subtle text-success-emphasis rounded-pill px-3 py-2 status-badge">
+                                <i class="fa-solid fa-circle-check me-1"></i> Delivered
+                            </span>
+                            <small class="text-muted fw-bold">ID: #LOG-103</small>
+                        </div>
+                        
+                        <h5 class="fw-bold text-dark mb-1 produce-name">Organic Tomatoes</h5>
+                        <p class="text-muted small mb-3"><i class="fa-solid fa-weight-hanging me-1"></i> Quantity: <strong>64.5 x 100KG</strong></p>
+
+                        <!-- Route Information -->
+                        <div class="route-badge mb-3">
+                            <div class="small text-muted"><i class="fa-solid fa-location-dot text-danger me-1"></i> <strong>From:</strong> Saraswati Farms</div>
+                            <div class="small text-muted mt-1"><i class="fa-solid fa-flag-checkered text-success me-1"></i> <strong>To:</strong> Local Agri Market Center</div>
+                        </div>
+
+                        <hr class="my-2 border-light">
+
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <div>
+                                <small class="text-muted d-block">Driver</small>
+                                <strong class="text-dark driver-name"><i class="fa-solid fa-user-circle me-1"></i> Pavan</strong>
+                            </div>
+                            <div class="text-end">
+                                <small class="text-muted d-block">Vehicle</small>
+                                <small class="fw-semibold text-agri">Mahindra Bolero Pickup</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript Filtering Script -->
+    <script>
+        function filterCards() {
+            const query = document.getElementById('cardSearchInput').value.toLowerCase().trim();
+            const selectedStatus = document.getElementById('statusCardFilter').value;
+            const cardItems = document.querySelectorAll('.logistic-card-item');
+
+            cardItems.forEach(card => {
+                const text = card.innerText.toLowerCase();
+                const statusBadge = card.querySelector('.status-badge').innerText.trim();
+
+                const matchesSearch = text.includes(query);
+                const matchesStatus = (selectedStatus === 'ALL' || statusBadge.includes(selectedStatus));
+
+                if (matchesSearch && matchesStatus) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

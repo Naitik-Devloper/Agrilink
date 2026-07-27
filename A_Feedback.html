@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriLink - Feedback Management</title>
+
+    <!-- Bootstrap 5 CSS & FontAwesome Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-green: #2e7d32;
+            --dark-bg: #1b5e20;
+            --light-green: #e8f5e9;
+            --bg-body: #f4f6f4;
+            --text-dark: #333333;
+        }
+
+        body {
+            background-color: var(--bg-body) !important;
+            color: var(--text-dark) !important;
+        }
+
+        .sb {
+            background-color: #1C3F24 !important;
+        }
+
+        /* Desktop layout structural alignment wrapper */
+        @media (min-width: 992px) {
+            .main-content-wrapper {
+                margin-left: 260px !important;
+                padding: 30px !important;
+                margin-top: 56px;
+            }
+        }
+
+        /* Mobile dynamic screen updates */
+        @media (max-width: 991.98px) {
+            .main-content-wrapper {
+                margin-left: 0px !important;
+                padding: 15px !important;
+                margin-top: 56px;
+            }
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .sidebar-menu li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-menu li a:hover,
+        .sidebar-menu li.active a {
+            background-color: var(--primary-green);
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        /* Feedback UI Specific Styling */
+        .badge-farmer {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
+        }
+
+        .badge-buyer {
+            background-color: #e3f2fd;
+            color: #1565c0;
+            border: 1px solid #90caf9;
+        }
+
+        .card-summary {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Fixed Top Navbar Component -->
+    <nav class="navbar navbar-expand-lg bg-dark fixed-top navbar-dark">
+        <div class="container-fluid px-3 d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-success d-lg-none me-2" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#mySidebar" aria-controls="mySidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <a class="navbar-brand fw-bold text-success fs-3 d-flex align-items-center gap-2 m-0" href="#">
+                    <i class="fa-brands fa-pagelines"></i> AgriLink
+                </a>
+            </div>
+            <div class="d-flex align-items-center ms-auto">
+                <a class="nav-link text-success fs-4 p-2" href="home.html">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar Navigation Drawer -->
+    <div class="offcanvas-lg offcanvas-start text-white border-end border-secondary p-4 shadow sb" id="mySidebar"
+        style="width: 260px; min-height: 100vh; position: fixed; left: 0; z-index: 1000; top: 56px;">
+        <div class="text-center">
+            <div class="d-grid gap-2 text-start">
+                <ul class="sidebar-menu p-0">
+                    <li><a href="A_farmer.html"><i class="fa-solid fa-wheat-awn me-2"></i>Registered Farmers</a></li>
+                    <li><a href="A_company.html"><i class="fa-solid fa-building me-2"></i>Registered Company</a></li>
+                    <li><a href="A_bidding.html"><i class="fa-solid fa-gavel me-2"></i>Current Bidding</a></li>
+                    <li class="active"><a href="A_Feedback.html"><i class="fa-solid fa-comments me-2"></i>Feedback</a></li>
+                    <li><a href="A_Logistics.html"><i class="fa-solid fa-comments me-2"></i>Logistic</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Workspace Frame Container -->
+    <div class="main-content-wrapper flex-grow-1">
+        <div class="container-fluid">
+
+            <!-- Title & Export Button -->
+            
+
+            <!-- Stats Overview -->
+            <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                    <div class="card card-summary p-3 bg-white">
+                        <small class="text-muted fw-bold">TOTAL FEEDBACKS</small>
+                        <h2 class="fw-bold text-success mb-0 mt-1">128</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-summary p-3 bg-white">
+                        <small class="text-muted fw-bold">FARMER REVIEWS</small>
+                        <h2 class="fw-bold text-dark mb-0 mt-1">74</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-summary p-3 bg-white">
+                        <small class="text-muted fw-bold">BUYER REVIEWS</small>
+                        <h2 class="fw-bold text-dark mb-0 mt-1">54</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filter Controls -->
+            <div class="card card-summary bg-white mb-4">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-7">
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i
+                                        class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                                <input type="text" id="searchInput" class="form-control border-start-0"
+                                    placeholder="Search by name, email, or message...">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <select id="roleFilter" class="form-select">
+                                <option value="ALL">All User Types</option>
+                                <option value="Farmer">👨‍🌾 Farmers Only</option>
+                                <option value="Buyer">🛒 Buyers Only</option>
+                            </select>
+                        </div>
+                        <div class="col-md-1">
+                            <button onclick="resetFilters()" class="btn btn-outline-secondary w-100"
+                                title="Reset Filters"><i class="fa-solid fa-rotate-left"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Feedback Table Card -->
+            <div class="card card-summary bg-white">
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0" id="feedbackTable">
+                            <thead class="table-light">
+                                <tr>
+                                    <th class="ps-3">ID</th>
+                                    <th>User Details</th>
+                                    <th>User Type</th>
+                                    <th>Feedback / Comments</th>
+                                    <th>Submitted Date</th>
+                                    <th class="text-center">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Row 1: Farmer -->
+                                <tr>
+                                    <td class="ps-3 fw-bold text-muted">1</td>
+                                    <td>
+                                        <div class="fw-bold text-dark">Ramesh Patil</div>
+                                        <small class="text-muted"><i
+                                                class="fa-solid fa-envelope me-1"></i>ramesh.p@gmail.com</small>
+                                    </td>
+                                    <td><span class="badge badge-farmer px-2 py-1"><i
+                                                class="fa-solid fa-user-gear me-1"></i> Farmer</span></td>
+                                    <td>
+                                        <p class="mb-0 text-secondary" style="max-width: 400px;">"The bidding system was
+                                            very transparent. I got a fair price for my onion harvest directly from
+                                            buyers."</p>
+                                    </td>
+                                    <td><small class="text-muted">2026-07-25</small></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-success me-1" title="Reply"><i
+                                                class="fa-solid fa-reply"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Delete"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 2: Buyer -->
+                                <tr>
+                                    <td class="ps-3 fw-bold text-muted">2</td>
+                                    <td>
+                                        <div class="fw-bold text-dark">Syngenta Procurement</div>
+                                        <small class="text-muted"><i
+                                                class="fa-solid fa-envelope me-1"></i>procure@syngenta.com</small>
+                                    </td>
+                                    <td><span class="badge badge-buyer px-2 py-1"><i
+                                                class="fa-solid fa-store me-1"></i> Buyer</span></td>
+                                    <td>
+                                        <p class="mb-0 text-secondary" style="max-width: 400px;">"Easy interface to place
+                                            bulk orders. It would be helpful if we could track logistics in real time
+                                            during transport."</p>
+                                    </td>
+                                    <td><small class="text-muted">2026-07-24</small></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-success me-1" title="Reply"><i
+                                                class="fa-solid fa-reply"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Delete"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+
+                                <!-- Row 3: Farmer -->
+                                <tr>
+                                    <td class="ps-3 fw-bold text-muted">3</td>
+                                    <td>
+                                        <div class="fw-bold text-dark">Suresh Deshmukh</div>
+                                        <small class="text-muted"><i
+                                                class="fa-solid fa-envelope me-1"></i>suresh.d@gmail.com</small>
+                                    </td>
+                                    <td><span class="badge badge-farmer px-2 py-1"><i
+                                                class="fa-solid fa-user-gear me-1"></i> Farmer</span></td>
+                                    <td>
+                                        <p class="mb-0 text-secondary" style="max-width: 400px;">"Good app, but payment
+                                            transfer takes 2 days. Please speed up the payment disbursement process."
+                                        </p>
+                                    </td>
+                                    <td><small class="text-muted">2026-07-22</small></td>
+                                    <td class="text-center">
+                                        <button class="btn btn-sm btn-outline-success me-1" title="Reply"><i
+                                                class="fa-solid fa-reply"></i></button>
+                                        <button class="btn btn-sm btn-outline-danger" title="Delete"><i
+                                                class="fa-solid fa-trash"></i></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- JavaScript for Live Table Filtering -->
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const roleFilter = document.getElementById('roleFilter');
+        const tableRows = document.querySelectorAll('#feedbackTable tbody tr');
+
+        function filterTable() {
+            const query = searchInput.value.toLowerCase();
+            const selectedRole = roleFilter.value;
+
+            tableRows.forEach(row => {
+                const idtext = row.cells[0].innerText.toLowerCase();
+                const userDetailsText = row.cells[1].innerText.toLowerCase();
+                const userType = row.cells[2].innerText.includes('Farmer') ? 'Farmer' : 'Buyer';
+
+                const matchesSearch = idtext.includes(query) || userDetailsText.includes(query);
+                const matchesRole = (selectedRole === 'ALL' || userType === selectedRole);
+
+                if (matchesSearch && matchesRole) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        searchInput.addEventListener('keyup', filterTable);
+        roleFilter.addEventListener('change', filterTable);
+
+        function resetFilters() {
+            searchInput.value = '';
+            roleFilter.value = 'ALL';
+            filterTable();
+        }
+    </script>
+
+    <!-- Bootstrap 5 JS Component -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
